@@ -1,0 +1,722 @@
+[
+  {
+    "_id": "ind-001",
+    "type": "hash",
+    "value": "419fd03dc3610509ea0e8f698f9b04960bad2347c15f73c9f3fd774118365fbf",
+    "threat_ids": [
+      "thr-001"
+    ],
+    "categories": [
+      "ransomware"
+    ],
+    "first_seen": "2026-10-07T09:46:00Z",
+    "last_seen": "2026-10-07T09:46:00Z",
+    "sightings": 1,
+    "confidence": 90,
+    "status": "active",
+    "created_at": "2026-10-07T09:46:00Z",
+    "updated_at": "2026-10-07T09:46:00Z"
+  },
+  {
+    "_id": "ind-002",
+    "type": "email",
+    "value": "hr23@mail.example",
+    "threat_ids": [
+      "thr-002"
+    ],
+    "categories": [
+      "credential-theft"
+    ],
+    "first_seen": "2026-10-07T09:18:00Z",
+    "last_seen": "2026-10-07T09:18:00Z",
+    "sightings": 1,
+    "confidence": 80,
+    "status": "active",
+    "created_at": "2026-10-07T09:18:00Z",
+    "updated_at": "2026-10-07T09:18:00Z"
+  },
+  {
+    "_id": "ind-003",
+    "type": "email",
+    "value": "admin68@mail.example",
+    "threat_ids": [
+      "thr-003"
+    ],
+    "categories": [
+      "phishing"
+    ],
+    "first_seen": "2026-10-07T08:55:00Z",
+    "last_seen": "2026-10-07T08:55:00Z",
+    "sightings": 1,
+    "confidence": 80,
+    "status": "active",
+    "created_at": "2026-10-07T08:55:00Z",
+    "updated_at": "2026-10-07T08:55:00Z"
+  },
+  {
+    "_id": "ind-004",
+    "type": "hash",
+    "value": "04446e481d74f5fc4d1c9de733f851f34751515afab5bdbd2337bbe4b23b083a",
+    "threat_ids": [
+      "thr-004"
+    ],
+    "categories": [
+      "malware"
+    ],
+    "first_seen": "2026-10-07T08:49:00Z",
+    "last_seen": "2026-10-07T08:49:00Z",
+    "sightings": 1,
+    "confidence": 60,
+    "status": "active",
+    "created_at": "2026-10-07T08:49:00Z",
+    "updated_at": "2026-10-07T08:49:00Z"
+  },
+  {
+    "_id": "ind-005",
+    "type": "hash",
+    "value": "70c25592bab2831e9cf3cb82e503bb859a79f142b91cac88699e4a11202b10e1",
+    "threat_ids": [
+      "thr-005"
+    ],
+    "categories": [
+      "data-leak"
+    ],
+    "first_seen": "2026-10-07T08:05:00Z",
+    "last_seen": "2026-10-07T08:05:00Z",
+    "sightings": 1,
+    "confidence": 70,
+    "status": "active",
+    "created_at": "2026-10-07T08:05:00Z",
+    "updated_at": "2026-10-07T08:05:00Z"
+  },
+  {
+    "_id": "ind-006",
+    "type": "hash",
+    "value": "01d399170a7c7fa791a9eae7b9806703f451a0e22ef7c576ba74e4cc2339a475",
+    "threat_ids": [
+      "thr-006"
+    ],
+    "categories": [
+      "exploit"
+    ],
+    "first_seen": "2026-10-07T07:46:00Z",
+    "last_seen": "2026-10-07T07:46:00Z",
+    "sightings": 1,
+    "confidence": 70,
+    "status": "active",
+    "created_at": "2026-10-07T07:46:00Z",
+    "updated_at": "2026-10-07T07:46:00Z"
+  },
+  {
+    "_id": "ind-007",
+    "type": "domain",
+    "value": "docs-share-82.example",
+    "threat_ids": [
+      "thr-007"
+    ],
+    "categories": [
+      "ransomware"
+    ],
+    "first_seen": "2026-10-07T06:03:00Z",
+    "last_seen": "2026-10-07T06:03:00Z",
+    "sightings": 1,
+    "confidence": 70,
+    "status": "active",
+    "created_at": "2026-10-07T06:03:00Z",
+    "updated_at": "2026-10-07T06:03:00Z"
+  },
+  {
+    "_id": "ind-008",
+    "type": "url",
+    "value": "http://demourigqg3kgdwl.onion/dump_65",
+    "threat_ids": [
+      "thr-008"
+    ],
+    "categories": [
+      "credential-theft"
+    ],
+    "first_seen": "2026-10-07T05:45:00Z",
+    "last_seen": "2026-10-07T05:45:00Z",
+    "sightings": 1,
+    "confidence": 80,
+    "status": "active",
+    "created_at": "2026-10-07T05:45:00Z",
+    "updated_at": "2026-10-07T05:45:00Z"
+  },
+  {
+    "_id": "ind-009",
+    "type": "url",
+    "value": "http://demoursukqqea2q2.onion/dump_08",
+    "threat_ids": [
+      "thr-009"
+    ],
+    "categories": [
+      "phishing"
+    ],
+    "first_seen": "2026-10-07T04:59:00Z",
+    "last_seen": "2026-10-07T04:59:00Z",
+    "sightings": 1,
+    "confidence": 60,
+    "status": "active",
+    "created_at": "2026-10-07T04:59:00Z",
+    "updated_at": "2026-10-07T04:59:00Z"
+  },
+  {
+    "_id": "ind-010",
+    "type": "hash",
+    "value": "f71009408d727c5244376766b0b098f6492c3f618144c5d8d75cd39693c91d13",
+    "threat_ids": [
+      "thr-010"
+    ],
+    "categories": [
+      "malware"
+    ],
+    "first_seen": "2026-10-07T04:32:00Z",
+    "last_seen": "2026-10-07T04:32:00Z",
+    "sightings": 1,
+    "confidence": 80,
+    "status": "active",
+    "created_at": "2026-10-07T04:32:00Z",
+    "updated_at": "2026-10-07T04:32:00Z"
+  },
+  {
+    "_id": "ind-011",
+    "type": "hash",
+    "value": "945616f883702af7217e04d13ddf10fcb22924110e04f15cfbec77df455276aa",
+    "threat_ids": [
+      "thr-011"
+    ],
+    "categories": [
+      "data-leak"
+    ],
+    "first_seen": "2026-10-07T04:07:00Z",
+    "last_seen": "2026-10-07T04:07:00Z",
+    "sightings": 1,
+    "confidence": 80,
+    "status": "active",
+    "created_at": "2026-10-07T04:07:00Z",
+    "updated_at": "2026-10-07T04:07:00Z"
+  },
+  {
+    "_id": "ind-012",
+    "type": "ip",
+    "value": "198.51.100.175",
+    "threat_ids": [
+      "thr-012"
+    ],
+    "categories": [
+      "exploit"
+    ],
+    "first_seen": "2026-10-07T04:01:00Z",
+    "last_seen": "2026-10-07T04:01:00Z",
+    "sightings": 1,
+    "confidence": 60,
+    "status": "active",
+    "created_at": "2026-10-07T04:01:00Z",
+    "updated_at": "2026-10-07T04:01:00Z"
+  },
+  {
+    "_id": "ind-013",
+    "type": "url",
+    "value": "http://demouryswd3bsvsh.onion/panel_99",
+    "threat_ids": [
+      "thr-013"
+    ],
+    "categories": [
+      "ransomware"
+    ],
+    "first_seen": "2026-10-07T03:47:00Z",
+    "last_seen": "2026-10-07T03:47:00Z",
+    "sightings": 1,
+    "confidence": 90,
+    "status": "active",
+    "created_at": "2026-10-07T03:47:00Z",
+    "updated_at": "2026-10-07T03:47:00Z"
+  },
+  {
+    "_id": "ind-014",
+    "type": "email",
+    "value": "support26@mail.example",
+    "threat_ids": [
+      "thr-014"
+    ],
+    "categories": [
+      "credential-theft"
+    ],
+    "first_seen": "2026-10-07T03:00:00Z",
+    "last_seen": "2026-10-07T03:00:00Z",
+    "sightings": 1,
+    "confidence": 60,
+    "status": "active",
+    "created_at": "2026-10-07T03:00:00Z",
+    "updated_at": "2026-10-07T03:00:00Z"
+  },
+  {
+    "_id": "ind-015",
+    "type": "email",
+    "value": "admin16@mail.example",
+    "threat_ids": [
+      "thr-015"
+    ],
+    "categories": [
+      "phishing"
+    ],
+    "first_seen": "2026-10-07T02:30:00Z",
+    "last_seen": "2026-10-07T02:30:00Z",
+    "sightings": 1,
+    "confidence": 60,
+    "status": "active",
+    "created_at": "2026-10-07T02:30:00Z",
+    "updated_at": "2026-10-07T02:30:00Z"
+  },
+  {
+    "_id": "ind-016",
+    "type": "hash",
+    "value": "d21b6b576eadcf971ff0397fb9a84c9cb44e30a426a61fb486ca25c26373be8e",
+    "threat_ids": [
+      "thr-016"
+    ],
+    "categories": [
+      "malware"
+    ],
+    "first_seen": "2026-10-07T01:09:00Z",
+    "last_seen": "2026-10-07T01:09:00Z",
+    "sightings": 1,
+    "confidence": 80,
+    "status": "active",
+    "created_at": "2026-10-07T01:09:00Z",
+    "updated_at": "2026-10-07T01:09:00Z"
+  },
+  {
+    "_id": "ind-017",
+    "type": "url",
+    "value": "http://demourw2yyp2oilb.onion/leak_88",
+    "threat_ids": [
+      "thr-017"
+    ],
+    "categories": [
+      "data-leak"
+    ],
+    "first_seen": "2026-10-06T22:59:00Z",
+    "last_seen": "2026-10-06T22:59:00Z",
+    "sightings": 1,
+    "confidence": 90,
+    "status": "active",
+    "created_at": "2026-10-06T22:59:00Z",
+    "updated_at": "2026-10-06T22:59:00Z"
+  },
+  {
+    "_id": "ind-018",
+    "type": "url",
+    "value": "http://demourbbr62quifl.onion/leak_05",
+    "threat_ids": [
+      "thr-018"
+    ],
+    "categories": [
+      "exploit"
+    ],
+    "first_seen": "2026-10-06T21:23:00Z",
+    "last_seen": "2026-10-06T21:23:00Z",
+    "sightings": 1,
+    "confidence": 80,
+    "status": "active",
+    "created_at": "2026-10-06T21:23:00Z",
+    "updated_at": "2026-10-06T21:23:00Z"
+  },
+  {
+    "_id": "ind-019",
+    "type": "hash",
+    "value": "bb3059887476bbf1b872e3b0f62021d1df178959106250b63fb7206b84934fa8",
+    "threat_ids": [
+      "thr-019"
+    ],
+    "categories": [
+      "ransomware"
+    ],
+    "first_seen": "2026-10-06T21:09:00Z",
+    "last_seen": "2026-10-06T21:09:00Z",
+    "sightings": 1,
+    "confidence": 60,
+    "status": "active",
+    "created_at": "2026-10-06T21:09:00Z",
+    "updated_at": "2026-10-06T21:09:00Z"
+  },
+  {
+    "_id": "ind-020",
+    "type": "url",
+    "value": "http://demourdojzxorvmx.onion/panel_59",
+    "threat_ids": [
+      "thr-020"
+    ],
+    "categories": [
+      "credential-theft"
+    ],
+    "first_seen": "2026-10-06T20:50:00Z",
+    "last_seen": "2026-10-06T20:50:00Z",
+    "sightings": 1,
+    "confidence": 90,
+    "status": "active",
+    "created_at": "2026-10-06T20:50:00Z",
+    "updated_at": "2026-10-06T20:50:00Z"
+  },
+  {
+    "_id": "ind-021",
+    "type": "email",
+    "value": "billing21@mail.example",
+    "threat_ids": [
+      "thr-021"
+    ],
+    "categories": [
+      "phishing"
+    ],
+    "first_seen": "2026-10-06T20:19:00Z",
+    "last_seen": "2026-10-06T20:19:00Z",
+    "sightings": 1,
+    "confidence": 90,
+    "status": "active",
+    "created_at": "2026-10-06T20:19:00Z",
+    "updated_at": "2026-10-06T20:19:00Z"
+  },
+  {
+    "_id": "ind-022",
+    "type": "hash",
+    "value": "3f93199e6e56a50d8fe02afeb2ce227c91f31d6a6def9d362d6c3a63b508f41c",
+    "threat_ids": [
+      "thr-022"
+    ],
+    "categories": [
+      "malware"
+    ],
+    "first_seen": "2026-10-06T19:56:00Z",
+    "last_seen": "2026-10-06T19:56:00Z",
+    "sightings": 1,
+    "confidence": 90,
+    "status": "active",
+    "created_at": "2026-10-06T19:56:00Z",
+    "updated_at": "2026-10-06T19:56:00Z"
+  },
+  {
+    "_id": "ind-023",
+    "type": "url",
+    "value": "http://demourtxqigbntcz.onion/market_69",
+    "threat_ids": [
+      "thr-023"
+    ],
+    "categories": [
+      "data-leak"
+    ],
+    "first_seen": "2026-10-06T19:39:00Z",
+    "last_seen": "2026-10-06T19:39:00Z",
+    "sightings": 1,
+    "confidence": 70,
+    "status": "active",
+    "created_at": "2026-10-06T19:39:00Z",
+    "updated_at": "2026-10-06T19:39:00Z"
+  },
+  {
+    "_id": "ind-024",
+    "type": "ip",
+    "value": "192.0.2.189",
+    "threat_ids": [
+      "thr-024"
+    ],
+    "categories": [
+      "exploit"
+    ],
+    "first_seen": "2026-10-06T19:02:00Z",
+    "last_seen": "2026-10-06T19:02:00Z",
+    "sightings": 1,
+    "confidence": 90,
+    "status": "active",
+    "created_at": "2026-10-06T19:02:00Z",
+    "updated_at": "2026-10-06T19:02:00Z"
+  },
+  {
+    "_id": "ind-025",
+    "type": "hash",
+    "value": "4cbeac4f5a283f73d0d8b88eb503ca5e08e1befb41eeba739298100392a7bdd6",
+    "threat_ids": [
+      "thr-025"
+    ],
+    "categories": [
+      "ransomware"
+    ],
+    "first_seen": "2026-10-06T18:48:00Z",
+    "last_seen": "2026-10-06T18:48:00Z",
+    "sightings": 1,
+    "confidence": 70,
+    "status": "active",
+    "created_at": "2026-10-06T18:48:00Z",
+    "updated_at": "2026-10-06T18:48:00Z"
+  },
+  {
+    "_id": "ind-026",
+    "type": "ip",
+    "value": "203.0.113.75",
+    "threat_ids": [
+      "thr-026"
+    ],
+    "categories": [
+      "credential-theft"
+    ],
+    "first_seen": "2026-10-06T17:57:00Z",
+    "last_seen": "2026-10-06T17:57:00Z",
+    "sightings": 1,
+    "confidence": 80,
+    "status": "active",
+    "created_at": "2026-10-06T17:57:00Z",
+    "updated_at": "2026-10-06T17:57:00Z"
+  },
+  {
+    "_id": "ind-027",
+    "type": "domain",
+    "value": "secure-login-87.example",
+    "threat_ids": [
+      "thr-027"
+    ],
+    "categories": [
+      "phishing"
+    ],
+    "first_seen": "2026-10-06T16:49:00Z",
+    "last_seen": "2026-10-06T16:49:00Z",
+    "sightings": 1,
+    "confidence": 90,
+    "status": "active",
+    "created_at": "2026-10-06T16:49:00Z",
+    "updated_at": "2026-10-06T16:49:00Z"
+  },
+  {
+    "_id": "ind-028",
+    "type": "ip",
+    "value": "203.0.113.134",
+    "threat_ids": [
+      "thr-028"
+    ],
+    "categories": [
+      "malware"
+    ],
+    "first_seen": "2026-10-06T16:22:00Z",
+    "last_seen": "2026-10-06T16:22:00Z",
+    "sightings": 1,
+    "confidence": 60,
+    "status": "active",
+    "created_at": "2026-10-06T16:22:00Z",
+    "updated_at": "2026-10-06T16:22:00Z"
+  },
+  {
+    "_id": "ind-029",
+    "type": "url",
+    "value": "http://demourkbhaxextnj.onion/leak_79",
+    "threat_ids": [
+      "thr-029"
+    ],
+    "categories": [
+      "data-leak"
+    ],
+    "first_seen": "2026-10-06T16:16:00Z",
+    "last_seen": "2026-10-06T16:16:00Z",
+    "sightings": 1,
+    "confidence": 70,
+    "status": "active",
+    "created_at": "2026-10-06T16:16:00Z",
+    "updated_at": "2026-10-06T16:16:00Z"
+  },
+  {
+    "_id": "ind-030",
+    "type": "hash",
+    "value": "7d7d5c08dc43c701c56775092998675ae2f425359870a720e6ad037f0e4c3555",
+    "threat_ids": [
+      "thr-030"
+    ],
+    "categories": [
+      "exploit"
+    ],
+    "first_seen": "2026-10-06T15:52:00Z",
+    "last_seen": "2026-10-06T15:52:00Z",
+    "sightings": 1,
+    "confidence": 60,
+    "status": "active",
+    "created_at": "2026-10-06T15:52:00Z",
+    "updated_at": "2026-10-06T15:52:00Z"
+  },
+  {
+    "_id": "ind-031",
+    "type": "hash",
+    "value": "1a6580af9d62d33691a62a15974823719714c713ee5f514ee7e39b6822c880bb",
+    "threat_ids": [
+      "thr-031"
+    ],
+    "categories": [
+      "ransomware"
+    ],
+    "first_seen": "2026-10-06T15:47:00Z",
+    "last_seen": "2026-10-06T15:47:00Z",
+    "sightings": 1,
+    "confidence": 80,
+    "status": "active",
+    "created_at": "2026-10-06T15:47:00Z",
+    "updated_at": "2026-10-06T15:47:00Z"
+  },
+  {
+    "_id": "ind-032",
+    "type": "email",
+    "value": "billing46@mail.example",
+    "threat_ids": [
+      "thr-032"
+    ],
+    "categories": [
+      "credential-theft"
+    ],
+    "first_seen": "2026-10-06T14:02:00Z",
+    "last_seen": "2026-10-06T14:02:00Z",
+    "sightings": 1,
+    "confidence": 90,
+    "status": "active",
+    "created_at": "2026-10-06T14:02:00Z",
+    "updated_at": "2026-10-06T14:02:00Z"
+  },
+  {
+    "_id": "ind-033",
+    "type": "email",
+    "value": "admin12@mail.example",
+    "threat_ids": [
+      "thr-033"
+    ],
+    "categories": [
+      "phishing"
+    ],
+    "first_seen": "2026-10-06T13:11:00Z",
+    "last_seen": "2026-10-06T13:11:00Z",
+    "sightings": 1,
+    "confidence": 90,
+    "status": "active",
+    "created_at": "2026-10-06T13:11:00Z",
+    "updated_at": "2026-10-06T13:11:00Z"
+  },
+  {
+    "_id": "ind-034",
+    "type": "ip",
+    "value": "192.0.2.85",
+    "threat_ids": [
+      "thr-034"
+    ],
+    "categories": [
+      "malware"
+    ],
+    "first_seen": "2026-10-06T12:35:00Z",
+    "last_seen": "2026-10-06T12:35:00Z",
+    "sightings": 1,
+    "confidence": 90,
+    "status": "active",
+    "created_at": "2026-10-06T12:35:00Z",
+    "updated_at": "2026-10-06T12:35:00Z"
+  },
+  {
+    "_id": "ind-035",
+    "type": "email",
+    "value": "support93@mail.example",
+    "threat_ids": [
+      "thr-035"
+    ],
+    "categories": [
+      "data-leak"
+    ],
+    "first_seen": "2026-10-06T12:25:00Z",
+    "last_seen": "2026-10-06T12:25:00Z",
+    "sightings": 1,
+    "confidence": 90,
+    "status": "active",
+    "created_at": "2026-10-06T12:25:00Z",
+    "updated_at": "2026-10-06T12:25:00Z"
+  },
+  {
+    "_id": "ind-036",
+    "type": "url",
+    "value": "http://demourm5oww2ynj4.onion/leak_85",
+    "threat_ids": [
+      "thr-036"
+    ],
+    "categories": [
+      "exploit"
+    ],
+    "first_seen": "2026-10-06T12:22:00Z",
+    "last_seen": "2026-10-06T12:22:00Z",
+    "sightings": 1,
+    "confidence": 70,
+    "status": "active",
+    "created_at": "2026-10-06T12:22:00Z",
+    "updated_at": "2026-10-06T12:22:00Z"
+  },
+  {
+    "_id": "ind-037",
+    "type": "ip",
+    "value": "198.51.100.70",
+    "threat_ids": [
+      "thr-037"
+    ],
+    "categories": [
+      "malware"
+    ],
+    "first_seen": "2026-10-06T12:20:00Z",
+    "last_seen": "2026-10-06T12:20:00Z",
+    "sightings": 1,
+    "confidence": 90,
+    "status": "active",
+    "created_at": "2026-10-06T12:20:00Z",
+    "updated_at": "2026-10-06T12:20:00Z"
+  },
+  {
+    "_id": "ind-038",
+    "type": "domain",
+    "value": "account-verify-52.example",
+    "threat_ids": [
+      "thr-038"
+    ],
+    "categories": [
+      "phishing"
+    ],
+    "first_seen": "2026-10-06T11:53:00Z",
+    "last_seen": "2026-10-06T11:53:00Z",
+    "sightings": 1,
+    "confidence": 70,
+    "status": "active",
+    "created_at": "2026-10-06T11:53:00Z",
+    "updated_at": "2026-10-06T11:53:00Z"
+  },
+  {
+    "_id": "ind-039",
+    "type": "url",
+    "value": "http://demour5zzbv2vg7n.onion/market_46",
+    "threat_ids": [
+      "thr-039"
+    ],
+    "categories": [
+      "data-leak"
+    ],
+    "first_seen": "2026-10-06T11:18:00Z",
+    "last_seen": "2026-10-06T11:18:00Z",
+    "sightings": 1,
+    "confidence": 80,
+    "status": "active",
+    "created_at": "2026-10-06T11:18:00Z",
+    "updated_at": "2026-10-06T11:18:00Z"
+  },
+  {
+    "_id": "ind-040",
+    "type": "hash",
+    "value": "0844b5f1e6d83700cb8fc6aae0eeeab6946a42ba1bddd3fc78729118fde454c8",
+    "threat_ids": [
+      "thr-040"
+    ],
+    "categories": [
+      "ransomware"
+    ],
+    "first_seen": "2026-10-06T11:18:00Z",
+    "last_seen": "2026-10-06T11:18:00Z",
+    "sightings": 1,
+    "confidence": 80,
+    "status": "active",
+    "created_at": "2026-10-06T11:18:00Z",
+    "updated_at": "2026-10-06T11:18:00Z"
+  }
+]

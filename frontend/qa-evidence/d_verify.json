@@ -1,0 +1,23 @@
+[
+  {
+    "id": "RS-V1",
+    "area": "Responsive",
+    "name": "414px tab1 settled geometry",
+    "result": "PASS",
+    "detail": "{\"vw\":414,\"sw\":404,\"out\":[]}"
+  },
+  {
+    "id": "RS-V3",
+    "area": "Responsive",
+    "name": "414px tab3 settled geometry",
+    "result": "PASS",
+    "detail": "{\"vw\":414,\"sw\":404,\"out\":[]}"
+  },
+  {
+    "id": "ST-V",
+    "area": "Stability",
+    "name": "DOM node count on the same tab after 3 rounds of 80 tab switches (should be flat)",
+    "result": "PASS",
+    "detail": "737 -> 741 -> 749"
+  }
+]

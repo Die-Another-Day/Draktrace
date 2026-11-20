@@ -1,0 +1,762 @@
+[
+  {
+    "id": "thr-001",
+    "title": "New ransomware builder advertised",
+    "severity": "medium",
+    "category": "ransomware",
+    "iocType": "hash",
+    "ioc": "419fd03dc3610509ea0e8f698f9b04960bad2347c15f73c9f3fd774118365fbf",
+    "source": {
+      "id": "src-03",
+      "name": "TorBox Forums"
+    },
+    "detectedAt": "2026-10-07T09:46:00Z",
+    "confidence": 90,
+    "description": "Indicator linked to ransomware activity. Review related hosts and check for exposure of internal assets.",
+    "tags": [
+      "ransomware",
+      "forum"
+    ]
+  },
+  {
+    "id": "thr-002",
+    "title": "Stealer log bundle posted",
+    "severity": "medium",
+    "category": "credential-theft",
+    "iocType": "email",
+    "ioc": "hr23@mail.example",
+    "source": {
+      "id": "src-08",
+      "name": "Ghostpost Channel"
+    },
+    "detectedAt": "2026-10-07T09:18:00Z",
+    "confidence": 80,
+    "description": "Indicator associated with stolen or harvested credentials. Rotate affected accounts and review recent logins.",
+    "tags": [
+      "credential-theft",
+      "chat-channel"
+    ]
+  },
+  {
+    "id": "thr-003",
+    "title": "Brand-impersonation domain cluster",
+    "severity": "medium",
+    "category": "phishing",
+    "iocType": "email",
+    "ioc": "admin68@mail.example",
+    "source": {
+      "id": "src-09",
+      "name": "DarkLedger Board"
+    },
+    "detectedAt": "2026-10-07T08:55:00Z",
+    "confidence": 80,
+    "description": "Indicator used in a phishing campaign targeting customers or staff. Consider blocking and takedown.",
+    "tags": [
+      "phishing",
+      "forum"
+    ]
+  },
+  {
+    "id": "thr-004",
+    "title": "Banking trojan update",
+    "severity": "high",
+    "category": "malware",
+    "iocType": "hash",
+    "ioc": "04446e481d74f5fc4d1c9de733f851f34751515afab5bdbd2337bbe4b23b083a",
+    "source": {
+      "id": "src-04",
+      "name": "BreachForums Mirror"
+    },
+    "detectedAt": "2026-10-07T08:49:00Z",
+    "confidence": 60,
+    "description": "Indicator tied to a malware family. Correlate with endpoint telemetry before blocking.",
+    "tags": [
+      "malware",
+      "forum"
+    ]
+  },
+  {
+    "id": "thr-005",
+    "title": "Internal documents bundle",
+    "severity": "low",
+    "category": "data-leak",
+    "iocType": "hash",
+    "ioc": "70c25592bab2831e9cf3cb82e503bb859a79f142b91cac88699e4a11202b10e1",
+    "source": {
+      "id": "src-06",
+      "name": "Onion Paste Archive"
+    },
+    "detectedAt": "2026-10-07T08:05:00Z",
+    "confidence": 70,
+    "description": "Indicator pointing to leaked or offered data. Confirm whether it belongs to the monitored organisation.",
+    "tags": [
+      "data-leak",
+      "paste-site"
+    ]
+  },
+  {
+    "id": "thr-006",
+    "title": "Public exploit for edge device",
+    "severity": "medium",
+    "category": "exploit",
+    "iocType": "hash",
+    "ioc": "01d399170a7c7fa791a9eae7b9806703f451a0e22ef7c576ba74e4cc2339a475",
+    "source": {
+      "id": "src-06",
+      "name": "Onion Paste Archive"
+    },
+    "detectedAt": "2026-10-07T07:46:00Z",
+    "confidence": 70,
+    "description": "Indicator related to an exploit offer. Check patch status of the affected software.",
+    "tags": [
+      "exploit",
+      "paste-site"
+    ]
+  },
+  {
+    "id": "thr-007",
+    "title": "New ransomware builder advertised",
+    "severity": "low",
+    "category": "ransomware",
+    "iocType": "domain",
+    "ioc": "docs-share-82.example",
+    "source": {
+      "id": "src-11",
+      "name": "Ransom Notice Wall"
+    },
+    "detectedAt": "2026-10-07T06:03:00Z",
+    "confidence": 70,
+    "description": "Indicator linked to ransomware activity. Review related hosts and check for exposure of internal assets.",
+    "tags": [
+      "ransomware",
+      "leak-site"
+    ]
+  },
+  {
+    "id": "thr-008",
+    "title": "Stealer log bundle posted",
+    "severity": "low",
+    "category": "credential-theft",
+    "iocType": "url",
+    "ioc": "http://demourigqg3kgdwl.onion/dump_65",
+    "source": {
+      "id": "src-05",
+      "name": "0-Day Payload Hub"
+    },
+    "detectedAt": "2026-10-07T05:45:00Z",
+    "confidence": 80,
+    "description": "Indicator associated with stolen or harvested credentials. Rotate affected accounts and review recent logins.",
+    "tags": [
+      "credential-theft",
+      "marketplace"
+    ]
+  },
+  {
+    "id": "thr-009",
+    "title": "Phishing kit for banking login",
+    "severity": "low",
+    "category": "phishing",
+    "iocType": "url",
+    "ioc": "http://demoursukqqea2q2.onion/dump_08",
+    "source": {
+      "id": "src-11",
+      "name": "Ransom Notice Wall"
+    },
+    "detectedAt": "2026-10-07T04:59:00Z",
+    "confidence": 60,
+    "description": "Indicator used in a phishing campaign targeting customers or staff. Consider blocking and takedown.",
+    "tags": [
+      "phishing",
+      "leak-site"
+    ]
+  },
+  {
+    "id": "thr-010",
+    "title": "Remote access tool advertised",
+    "severity": "medium",
+    "category": "malware",
+    "iocType": "hash",
+    "ioc": "f71009408d727c5244376766b0b098f6492c3f618144c5d8d75cd39693c91d13",
+    "source": {
+      "id": "src-01",
+      "name": "Hydra Market Relay"
+    },
+    "detectedAt": "2026-10-07T04:32:00Z",
+    "confidence": 80,
+    "description": "Indicator tied to a malware family. Correlate with endpoint telemetry before blocking.",
+    "tags": [
+      "malware",
+      "marketplace"
+    ]
+  },
+  {
+    "id": "thr-011",
+    "title": "Employee records sample posted",
+    "severity": "high",
+    "category": "data-leak",
+    "iocType": "hash",
+    "ioc": "945616f883702af7217e04d13ddf10fcb22924110e04f15cfbec77df455276aa",
+    "source": {
+      "id": "src-09",
+      "name": "DarkLedger Board"
+    },
+    "detectedAt": "2026-10-07T04:07:00Z",
+    "confidence": 80,
+    "description": "Indicator pointing to leaked or offered data. Confirm whether it belongs to the monitored organisation.",
+    "tags": [
+      "data-leak",
+      "forum"
+    ]
+  },
+  {
+    "id": "thr-012",
+    "title": "Initial-access broker post",
+    "severity": "high",
+    "category": "exploit",
+    "iocType": "ip",
+    "ioc": "198.51.100.175",
+    "source": {
+      "id": "src-04",
+      "name": "BreachForums Mirror"
+    },
+    "detectedAt": "2026-10-07T04:01:00Z",
+    "confidence": 60,
+    "description": "Indicator related to an exploit offer. Check patch status of the affected software.",
+    "tags": [
+      "exploit",
+      "forum"
+    ]
+  },
+  {
+    "id": "thr-013",
+    "title": "New ransomware builder advertised",
+    "severity": "high",
+    "category": "ransomware",
+    "iocType": "url",
+    "ioc": "http://demouryswd3bsvsh.onion/panel_99",
+    "source": {
+      "id": "src-06",
+      "name": "Onion Paste Archive"
+    },
+    "detectedAt": "2026-10-07T03:47:00Z",
+    "confidence": 90,
+    "description": "Indicator linked to ransomware activity. Review related hosts and check for exposure of internal assets.",
+    "tags": [
+      "ransomware",
+      "paste-site"
+    ]
+  },
+  {
+    "id": "thr-014",
+    "title": "Credential harvesting server",
+    "severity": "low",
+    "category": "credential-theft",
+    "iocType": "email",
+    "ioc": "support26@mail.example",
+    "source": {
+      "id": "src-11",
+      "name": "Ransom Notice Wall"
+    },
+    "detectedAt": "2026-10-07T03:00:00Z",
+    "confidence": 60,
+    "description": "Indicator associated with stolen or harvested credentials. Rotate affected accounts and review recent logins.",
+    "tags": [
+      "credential-theft",
+      "leak-site"
+    ]
+  },
+  {
+    "id": "thr-015",
+    "title": "Spoofed payroll portal",
+    "severity": "low",
+    "category": "phishing",
+    "iocType": "email",
+    "ioc": "admin16@mail.example",
+    "source": {
+      "id": "src-02",
+      "name": "ShadowLeak Index"
+    },
+    "detectedAt": "2026-10-07T02:30:00Z",
+    "confidence": 60,
+    "description": "Indicator used in a phishing campaign targeting customers or staff. Consider blocking and takedown.",
+    "tags": [
+      "phishing",
+      "leak-site"
+    ]
+  },
+  {
+    "id": "thr-016",
+    "title": "Remote access tool advertised",
+    "severity": "high",
+    "category": "malware",
+    "iocType": "hash",
+    "ioc": "d21b6b576eadcf971ff0397fb9a84c9cb44e30a426a61fb486ca25c26373be8e",
+    "source": {
+      "id": "src-10",
+      "name": "Carder Row"
+    },
+    "detectedAt": "2026-10-07T01:09:00Z",
+    "confidence": 80,
+    "description": "Indicator tied to a malware family. Correlate with endpoint telemetry before blocking.",
+    "tags": [
+      "malware",
+      "marketplace"
+    ]
+  },
+  {
+    "id": "thr-017",
+    "title": "Customer database dump offered",
+    "severity": "medium",
+    "category": "data-leak",
+    "iocType": "url",
+    "ioc": "http://demourw2yyp2oilb.onion/leak_88",
+    "source": {
+      "id": "src-08",
+      "name": "Ghostpost Channel"
+    },
+    "detectedAt": "2026-10-06T22:59:00Z",
+    "confidence": 90,
+    "description": "Indicator pointing to leaked or offered data. Confirm whether it belongs to the monitored organisation.",
+    "tags": [
+      "data-leak",
+      "chat-channel"
+    ]
+  },
+  {
+    "id": "thr-018",
+    "title": "Public exploit for edge device",
+    "severity": "medium",
+    "category": "exploit",
+    "iocType": "url",
+    "ioc": "http://demourbbr62quifl.onion/leak_05",
+    "source": {
+      "id": "src-03",
+      "name": "TorBox Forums"
+    },
+    "detectedAt": "2026-10-06T21:23:00Z",
+    "confidence": 80,
+    "description": "Indicator related to an exploit offer. Check patch status of the affected software.",
+    "tags": [
+      "exploit",
+      "forum"
+    ]
+  },
+  {
+    "id": "thr-019",
+    "title": "New ransomware builder advertised",
+    "severity": "low",
+    "category": "ransomware",
+    "iocType": "hash",
+    "ioc": "bb3059887476bbf1b872e3b0f62021d1df178959106250b63fb7206b84934fa8",
+    "source": {
+      "id": "src-10",
+      "name": "Carder Row"
+    },
+    "detectedAt": "2026-10-06T21:09:00Z",
+    "confidence": 60,
+    "description": "Indicator linked to ransomware activity. Review related hosts and check for exposure of internal assets.",
+    "tags": [
+      "ransomware",
+      "marketplace"
+    ]
+  },
+  {
+    "id": "thr-020",
+    "title": "Admin panel credentials listed",
+    "severity": "medium",
+    "category": "credential-theft",
+    "iocType": "url",
+    "ioc": "http://demourdojzxorvmx.onion/panel_59",
+    "source": {
+      "id": "src-04",
+      "name": "BreachForums Mirror"
+    },
+    "detectedAt": "2026-10-06T20:50:00Z",
+    "confidence": 90,
+    "description": "Indicator associated with stolen or harvested credentials. Rotate affected accounts and review recent logins.",
+    "tags": [
+      "credential-theft",
+      "forum"
+    ]
+  },
+  {
+    "id": "thr-021",
+    "title": "Fake delivery-tracking campaign",
+    "severity": "medium",
+    "category": "phishing",
+    "iocType": "email",
+    "ioc": "billing21@mail.example",
+    "source": {
+      "id": "src-09",
+      "name": "DarkLedger Board"
+    },
+    "detectedAt": "2026-10-06T20:19:00Z",
+    "confidence": 90,
+    "description": "Indicator used in a phishing campaign targeting customers or staff. Consider blocking and takedown.",
+    "tags": [
+      "phishing",
+      "forum"
+    ]
+  },
+  {
+    "id": "thr-022",
+    "title": "Loader sample with new packer",
+    "severity": "high",
+    "category": "malware",
+    "iocType": "hash",
+    "ioc": "3f93199e6e56a50d8fe02afeb2ce227c91f31d6a6def9d362d6c3a63b508f41c",
+    "source": {
+      "id": "src-09",
+      "name": "DarkLedger Board"
+    },
+    "detectedAt": "2026-10-06T19:56:00Z",
+    "confidence": 90,
+    "description": "Indicator tied to a malware family. Correlate with endpoint telemetry before blocking.",
+    "tags": [
+      "malware",
+      "forum"
+    ]
+  },
+  {
+    "id": "thr-023",
+    "title": "Employee records sample posted",
+    "severity": "critical",
+    "category": "data-leak",
+    "iocType": "url",
+    "ioc": "http://demourtxqigbntcz.onion/market_69",
+    "source": {
+      "id": "src-03",
+      "name": "TorBox Forums"
+    },
+    "detectedAt": "2026-10-06T19:39:00Z",
+    "confidence": 70,
+    "description": "Indicator pointing to leaked or offered data. Confirm whether it belongs to the monitored organisation.",
+    "tags": [
+      "data-leak",
+      "forum"
+    ]
+  },
+  {
+    "id": "thr-024",
+    "title": "Zero-day exploit offered for sale",
+    "severity": "critical",
+    "category": "exploit",
+    "iocType": "ip",
+    "ioc": "192.0.2.189",
+    "source": {
+      "id": "src-02",
+      "name": "ShadowLeak Index"
+    },
+    "detectedAt": "2026-10-06T19:02:00Z",
+    "confidence": 90,
+    "description": "Indicator related to an exploit offer. Check patch status of the affected software.",
+    "tags": [
+      "exploit",
+      "leak-site"
+    ]
+  },
+  {
+    "id": "thr-025",
+    "title": "New ransomware builder advertised",
+    "severity": "medium",
+    "category": "ransomware",
+    "iocType": "hash",
+    "ioc": "4cbeac4f5a283f73d0d8b88eb503ca5e08e1befb41eeba739298100392a7bdd6",
+    "source": {
+      "id": "src-10",
+      "name": "Carder Row"
+    },
+    "detectedAt": "2026-10-06T18:48:00Z",
+    "confidence": 70,
+    "description": "Indicator linked to ransomware activity. Review related hosts and check for exposure of internal assets.",
+    "tags": [
+      "ransomware",
+      "marketplace"
+    ]
+  },
+  {
+    "id": "thr-026",
+    "title": "Stealer log bundle posted",
+    "severity": "critical",
+    "category": "credential-theft",
+    "iocType": "ip",
+    "ioc": "203.0.113.75",
+    "source": {
+      "id": "src-05",
+      "name": "0-Day Payload Hub"
+    },
+    "detectedAt": "2026-10-06T17:57:00Z",
+    "confidence": 80,
+    "description": "Indicator associated with stolen or harvested credentials. Rotate affected accounts and review recent logins.",
+    "tags": [
+      "credential-theft",
+      "marketplace"
+    ]
+  },
+  {
+    "id": "thr-027",
+    "title": "Spoofed payroll portal",
+    "severity": "critical",
+    "category": "phishing",
+    "iocType": "domain",
+    "ioc": "secure-login-87.example",
+    "source": {
+      "id": "src-08",
+      "name": "Ghostpost Channel"
+    },
+    "detectedAt": "2026-10-06T16:49:00Z",
+    "confidence": 90,
+    "description": "Indicator used in a phishing campaign targeting customers or staff. Consider blocking and takedown.",
+    "tags": [
+      "phishing",
+      "chat-channel"
+    ]
+  },
+  {
+    "id": "thr-028",
+    "title": "Banking trojan update",
+    "severity": "high",
+    "category": "malware",
+    "iocType": "ip",
+    "ioc": "203.0.113.134",
+    "source": {
+      "id": "src-06",
+      "name": "Onion Paste Archive"
+    },
+    "detectedAt": "2026-10-06T16:22:00Z",
+    "confidence": 60,
+    "description": "Indicator tied to a malware family. Correlate with endpoint telemetry before blocking.",
+    "tags": [
+      "malware",
+      "paste-site"
+    ]
+  },
+  {
+    "id": "thr-029",
+    "title": "Customer database dump offered",
+    "severity": "high",
+    "category": "data-leak",
+    "iocType": "url",
+    "ioc": "http://demourkbhaxextnj.onion/leak_79",
+    "source": {
+      "id": "src-06",
+      "name": "Onion Paste Archive"
+    },
+    "detectedAt": "2026-10-06T16:16:00Z",
+    "confidence": 70,
+    "description": "Indicator pointing to leaked or offered data. Confirm whether it belongs to the monitored organisation.",
+    "tags": [
+      "data-leak",
+      "paste-site"
+    ]
+  },
+  {
+    "id": "thr-030",
+    "title": "Exploit-as-a-service listing",
+    "severity": "medium",
+    "category": "exploit",
+    "iocType": "hash",
+    "ioc": "7d7d5c08dc43c701c56775092998675ae2f425359870a720e6ad037f0e4c3555",
+    "source": {
+      "id": "src-02",
+      "name": "ShadowLeak Index"
+    },
+    "detectedAt": "2026-10-06T15:52:00Z",
+    "confidence": 60,
+    "description": "Indicator related to an exploit offer. Check patch status of the affected software.",
+    "tags": [
+      "exploit",
+      "leak-site"
+    ]
+  },
+  {
+    "id": "thr-031",
+    "title": "New ransomware builder advertised",
+    "severity": "medium",
+    "category": "ransomware",
+    "iocType": "hash",
+    "ioc": "1a6580af9d62d33691a62a15974823719714c713ee5f514ee7e39b6822c880bb",
+    "source": {
+      "id": "src-05",
+      "name": "0-Day Payload Hub"
+    },
+    "detectedAt": "2026-10-06T15:47:00Z",
+    "confidence": 80,
+    "description": "Indicator linked to ransomware activity. Review related hosts and check for exposure of internal assets.",
+    "tags": [
+      "ransomware",
+      "marketplace"
+    ]
+  },
+  {
+    "id": "thr-032",
+    "title": "Credential harvesting server",
+    "severity": "high",
+    "category": "credential-theft",
+    "iocType": "email",
+    "ioc": "billing46@mail.example",
+    "source": {
+      "id": "src-09",
+      "name": "DarkLedger Board"
+    },
+    "detectedAt": "2026-10-06T14:02:00Z",
+    "confidence": 90,
+    "description": "Indicator associated with stolen or harvested credentials. Rotate affected accounts and review recent logins.",
+    "tags": [
+      "credential-theft",
+      "forum"
+    ]
+  },
+  {
+    "id": "thr-033",
+    "title": "Phishing kit for banking login",
+    "severity": "medium",
+    "category": "phishing",
+    "iocType": "email",
+    "ioc": "admin12@mail.example",
+    "source": {
+      "id": "src-06",
+      "name": "Onion Paste Archive"
+    },
+    "detectedAt": "2026-10-06T13:11:00Z",
+    "confidence": 90,
+    "description": "Indicator used in a phishing campaign targeting customers or staff. Consider blocking and takedown.",
+    "tags": [
+      "phishing",
+      "paste-site"
+    ]
+  },
+  {
+    "id": "thr-034",
+    "title": "Banking trojan update",
+    "severity": "low",
+    "category": "malware",
+    "iocType": "ip",
+    "ioc": "192.0.2.85",
+    "source": {
+      "id": "src-05",
+      "name": "0-Day Payload Hub"
+    },
+    "detectedAt": "2026-10-06T12:35:00Z",
+    "confidence": 90,
+    "description": "Indicator tied to a malware family. Correlate with endpoint telemetry before blocking.",
+    "tags": [
+      "malware",
+      "marketplace"
+    ]
+  },
+  {
+    "id": "thr-035",
+    "title": "Source code archive leaked",
+    "severity": "low",
+    "category": "data-leak",
+    "iocType": "email",
+    "ioc": "support93@mail.example",
+    "source": {
+      "id": "src-10",
+      "name": "Carder Row"
+    },
+    "detectedAt": "2026-10-06T12:25:00Z",
+    "confidence": 90,
+    "description": "Indicator pointing to leaked or offered data. Confirm whether it belongs to the monitored organisation.",
+    "tags": [
+      "data-leak",
+      "marketplace"
+    ]
+  },
+  {
+    "id": "thr-036",
+    "title": "Public exploit for edge device",
+    "severity": "medium",
+    "category": "exploit",
+    "iocType": "url",
+    "ioc": "http://demourm5oww2ynj4.onion/leak_85",
+    "source": {
+      "id": "src-06",
+      "name": "Onion Paste Archive"
+    },
+    "detectedAt": "2026-10-06T12:22:00Z",
+    "confidence": 70,
+    "description": "Indicator related to an exploit offer. Check patch status of the affected software.",
+    "tags": [
+      "exploit",
+      "paste-site"
+    ]
+  },
+  {
+    "id": "thr-037",
+    "title": "Loader sample with new packer",
+    "severity": "high",
+    "category": "malware",
+    "iocType": "ip",
+    "ioc": "198.51.100.70",
+    "source": {
+      "id": "src-06",
+      "name": "Onion Paste Archive"
+    },
+    "detectedAt": "2026-10-06T12:20:00Z",
+    "confidence": 90,
+    "description": "Indicator tied to a malware family. Correlate with endpoint telemetry before blocking.",
+    "tags": [
+      "malware",
+      "paste-site"
+    ]
+  },
+  {
+    "id": "thr-038",
+    "title": "Fake delivery-tracking campaign",
+    "severity": "high",
+    "category": "phishing",
+    "iocType": "domain",
+    "ioc": "account-verify-52.example",
+    "source": {
+      "id": "src-10",
+      "name": "Carder Row"
+    },
+    "detectedAt": "2026-10-06T11:53:00Z",
+    "confidence": 70,
+    "description": "Indicator used in a phishing campaign targeting customers or staff. Consider blocking and takedown.",
+    "tags": [
+      "phishing",
+      "marketplace"
+    ]
+  },
+  {
+    "id": "thr-039",
+    "title": "Source code archive leaked",
+    "severity": "medium",
+    "category": "data-leak",
+    "iocType": "url",
+    "ioc": "http://demour5zzbv2vg7n.onion/market_46",
+    "source": {
+      "id": "src-05",
+      "name": "0-Day Payload Hub"
+    },
+    "detectedAt": "2026-10-06T11:18:00Z",
+    "confidence": 80,
+    "description": "Indicator pointing to leaked or offered data. Confirm whether it belongs to the monitored organisation.",
+    "tags": [
+      "data-leak",
+      "marketplace"
+    ]
+  },
+  {
+    "id": "thr-040",
+    "title": "BlackCat affiliate leak notice",
+    "severity": "high",
+    "category": "ransomware",
+    "iocType": "hash",
+    "ioc": "0844b5f1e6d83700cb8fc6aae0eeeab6946a42ba1bddd3fc78729118fde454c8",
+    "source": {
+      "id": "src-03",
+      "name": "TorBox Forums"
+    },
+    "detectedAt": "2026-10-06T11:18:00Z",
+    "confidence": 80,
+    "description": "Indicator linked to ransomware activity. Review related hosts and check for exposure of internal assets.",
+    "tags": [
+      "ransomware",
+      "forum"
+    ]
+  }
+]

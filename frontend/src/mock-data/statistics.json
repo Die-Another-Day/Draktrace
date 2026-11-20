@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-10-07T10:30:00Z",
+  "threats": {
+    "total": 40,
+    "deltaPct": 12.4,
+    "trend": [
+      18,
+      22,
+      21,
+      27,
+      26,
+      31,
+      33,
+      36,
+      38,
+      40
+    ]
+  },
+  "sources": {
+    "monitored": 12,
+    "online": 10,
+    "deltaPct": 8.3,
+    "trend": [
+      8,
+      9,
+      9,
+      10,
+      10,
+      11,
+      11,
+      12,
+      12,
+      12
+    ]
+  },
+  "pages": {
+    "crawled": 48920,
+    "discovered": 63600,
+    "deltaPct": 8.7,
+    "trend": [
+      20,
+      28,
+      35,
+      33,
+      41,
+      47,
+      52,
+      58,
+      61,
+      66
+    ]
+  },
+  "crawlers": {
+    "active": 2,
+    "total": 4,
+    "deltaPct": 0,
+    "trend": [
+      3,
+      4,
+      4,
+      5,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  "severity": {
+    "critical": 4,
+    "high": 12,
+    "medium": 15,
+    "low": 9
+  },
+  "threatLevel": 70
+}

@@ -1,0 +1,1282 @@
+[
+  {
+    "_id": "thr-001",
+    "threat_id": "thr-001",
+    "title": "New ransomware builder advertised",
+    "severity": "medium",
+    "category": "ransomware",
+    "status": "active",
+    "confidence": 90,
+    "description": "Indicator linked to ransomware activity. Review related hosts and check for exposure of internal assets.",
+    "tags": [
+      "ransomware",
+      "forum"
+    ],
+    "source": {
+      "source_id": "src-03",
+      "name": "TorBox Forums"
+    },
+    "indicators": [
+      {
+        "type": "hash",
+        "value": "419fd03dc3610509ea0e8f698f9b04960bad2347c15f73c9f3fd774118365fbf"
+      }
+    ],
+    "detected_at": "2026-10-07T09:46:00Z",
+    "first_seen": "2026-10-07T09:46:00Z",
+    "last_seen": "2026-10-07T09:46:00Z",
+    "created_at": "2026-10-07T09:46:00Z",
+    "updated_at": "2026-10-07T09:46:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-002",
+    "threat_id": "thr-002",
+    "title": "Stealer log bundle posted",
+    "severity": "medium",
+    "category": "credential-theft",
+    "status": "active",
+    "confidence": 80,
+    "description": "Indicator associated with stolen or harvested credentials. Rotate affected accounts and review recent logins.",
+    "tags": [
+      "credential-theft",
+      "chat-channel"
+    ],
+    "source": {
+      "source_id": "src-08",
+      "name": "Ghostpost Channel"
+    },
+    "indicators": [
+      {
+        "type": "email",
+        "value": "hr23@mail.example"
+      }
+    ],
+    "detected_at": "2026-10-07T09:18:00Z",
+    "first_seen": "2026-10-07T09:18:00Z",
+    "last_seen": "2026-10-07T09:18:00Z",
+    "created_at": "2026-10-07T09:18:00Z",
+    "updated_at": "2026-10-07T09:18:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-003",
+    "threat_id": "thr-003",
+    "title": "Brand-impersonation domain cluster",
+    "severity": "medium",
+    "category": "phishing",
+    "status": "active",
+    "confidence": 80,
+    "description": "Indicator used in a phishing campaign targeting customers or staff. Consider blocking and takedown.",
+    "tags": [
+      "phishing",
+      "forum"
+    ],
+    "source": {
+      "source_id": "src-09",
+      "name": "DarkLedger Board"
+    },
+    "indicators": [
+      {
+        "type": "email",
+        "value": "admin68@mail.example"
+      }
+    ],
+    "detected_at": "2026-10-07T08:55:00Z",
+    "first_seen": "2026-10-07T08:55:00Z",
+    "last_seen": "2026-10-07T08:55:00Z",
+    "created_at": "2026-10-07T08:55:00Z",
+    "updated_at": "2026-10-07T08:55:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-004",
+    "threat_id": "thr-004",
+    "title": "Banking trojan update",
+    "severity": "high",
+    "category": "malware",
+    "status": "active",
+    "confidence": 60,
+    "description": "Indicator tied to a malware family. Correlate with endpoint telemetry before blocking.",
+    "tags": [
+      "malware",
+      "forum"
+    ],
+    "source": {
+      "source_id": "src-04",
+      "name": "BreachForums Mirror"
+    },
+    "indicators": [
+      {
+        "type": "hash",
+        "value": "04446e481d74f5fc4d1c9de733f851f34751515afab5bdbd2337bbe4b23b083a"
+      }
+    ],
+    "detected_at": "2026-10-07T08:49:00Z",
+    "first_seen": "2026-10-07T08:49:00Z",
+    "last_seen": "2026-10-07T08:49:00Z",
+    "created_at": "2026-10-07T08:49:00Z",
+    "updated_at": "2026-10-07T08:49:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-005",
+    "threat_id": "thr-005",
+    "title": "Internal documents bundle",
+    "severity": "low",
+    "category": "data-leak",
+    "status": "active",
+    "confidence": 70,
+    "description": "Indicator pointing to leaked or offered data. Confirm whether it belongs to the monitored organisation.",
+    "tags": [
+      "data-leak",
+      "paste-site"
+    ],
+    "source": {
+      "source_id": "src-06",
+      "name": "Onion Paste Archive"
+    },
+    "indicators": [
+      {
+        "type": "hash",
+        "value": "70c25592bab2831e9cf3cb82e503bb859a79f142b91cac88699e4a11202b10e1"
+      }
+    ],
+    "detected_at": "2026-10-07T08:05:00Z",
+    "first_seen": "2026-10-07T08:05:00Z",
+    "last_seen": "2026-10-07T08:05:00Z",
+    "created_at": "2026-10-07T08:05:00Z",
+    "updated_at": "2026-10-07T08:05:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-006",
+    "threat_id": "thr-006",
+    "title": "Public exploit for edge device",
+    "severity": "medium",
+    "category": "exploit",
+    "status": "active",
+    "confidence": 70,
+    "description": "Indicator related to an exploit offer. Check patch status of the affected software.",
+    "tags": [
+      "exploit",
+      "paste-site"
+    ],
+    "source": {
+      "source_id": "src-06",
+      "name": "Onion Paste Archive"
+    },
+    "indicators": [
+      {
+        "type": "hash",
+        "value": "01d399170a7c7fa791a9eae7b9806703f451a0e22ef7c576ba74e4cc2339a475"
+      }
+    ],
+    "detected_at": "2026-10-07T07:46:00Z",
+    "first_seen": "2026-10-07T07:46:00Z",
+    "last_seen": "2026-10-07T07:46:00Z",
+    "created_at": "2026-10-07T07:46:00Z",
+    "updated_at": "2026-10-07T07:46:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-007",
+    "threat_id": "thr-007",
+    "title": "New ransomware builder advertised",
+    "severity": "low",
+    "category": "ransomware",
+    "status": "active",
+    "confidence": 70,
+    "description": "Indicator linked to ransomware activity. Review related hosts and check for exposure of internal assets.",
+    "tags": [
+      "ransomware",
+      "leak-site"
+    ],
+    "source": {
+      "source_id": "src-11",
+      "name": "Ransom Notice Wall"
+    },
+    "indicators": [
+      {
+        "type": "domain",
+        "value": "docs-share-82.example"
+      }
+    ],
+    "detected_at": "2026-10-07T06:03:00Z",
+    "first_seen": "2026-10-07T06:03:00Z",
+    "last_seen": "2026-10-07T06:03:00Z",
+    "created_at": "2026-10-07T06:03:00Z",
+    "updated_at": "2026-10-07T06:03:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-008",
+    "threat_id": "thr-008",
+    "title": "Stealer log bundle posted",
+    "severity": "low",
+    "category": "credential-theft",
+    "status": "active",
+    "confidence": 80,
+    "description": "Indicator associated with stolen or harvested credentials. Rotate affected accounts and review recent logins.",
+    "tags": [
+      "credential-theft",
+      "marketplace"
+    ],
+    "source": {
+      "source_id": "src-05",
+      "name": "0-Day Payload Hub"
+    },
+    "indicators": [
+      {
+        "type": "url",
+        "value": "http://demourigqg3kgdwl.onion/dump_65"
+      }
+    ],
+    "detected_at": "2026-10-07T05:45:00Z",
+    "first_seen": "2026-10-07T05:45:00Z",
+    "last_seen": "2026-10-07T05:45:00Z",
+    "created_at": "2026-10-07T05:45:00Z",
+    "updated_at": "2026-10-07T05:45:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-009",
+    "threat_id": "thr-009",
+    "title": "Phishing kit for banking login",
+    "severity": "low",
+    "category": "phishing",
+    "status": "active",
+    "confidence": 60,
+    "description": "Indicator used in a phishing campaign targeting customers or staff. Consider blocking and takedown.",
+    "tags": [
+      "phishing",
+      "leak-site"
+    ],
+    "source": {
+      "source_id": "src-11",
+      "name": "Ransom Notice Wall"
+    },
+    "indicators": [
+      {
+        "type": "url",
+        "value": "http://demoursukqqea2q2.onion/dump_08"
+      }
+    ],
+    "detected_at": "2026-10-07T04:59:00Z",
+    "first_seen": "2026-10-07T04:59:00Z",
+    "last_seen": "2026-10-07T04:59:00Z",
+    "created_at": "2026-10-07T04:59:00Z",
+    "updated_at": "2026-10-07T04:59:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-010",
+    "threat_id": "thr-010",
+    "title": "Remote access tool advertised",
+    "severity": "medium",
+    "category": "malware",
+    "status": "active",
+    "confidence": 80,
+    "description": "Indicator tied to a malware family. Correlate with endpoint telemetry before blocking.",
+    "tags": [
+      "malware",
+      "marketplace"
+    ],
+    "source": {
+      "source_id": "src-01",
+      "name": "Hydra Market Relay"
+    },
+    "indicators": [
+      {
+        "type": "hash",
+        "value": "f71009408d727c5244376766b0b098f6492c3f618144c5d8d75cd39693c91d13"
+      }
+    ],
+    "detected_at": "2026-10-07T04:32:00Z",
+    "first_seen": "2026-10-07T04:32:00Z",
+    "last_seen": "2026-10-07T04:32:00Z",
+    "created_at": "2026-10-07T04:32:00Z",
+    "updated_at": "2026-10-07T04:32:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-011",
+    "threat_id": "thr-011",
+    "title": "Employee records sample posted",
+    "severity": "high",
+    "category": "data-leak",
+    "status": "active",
+    "confidence": 80,
+    "description": "Indicator pointing to leaked or offered data. Confirm whether it belongs to the monitored organisation.",
+    "tags": [
+      "data-leak",
+      "forum"
+    ],
+    "source": {
+      "source_id": "src-09",
+      "name": "DarkLedger Board"
+    },
+    "indicators": [
+      {
+        "type": "hash",
+        "value": "945616f883702af7217e04d13ddf10fcb22924110e04f15cfbec77df455276aa"
+      }
+    ],
+    "detected_at": "2026-10-07T04:07:00Z",
+    "first_seen": "2026-10-07T04:07:00Z",
+    "last_seen": "2026-10-07T04:07:00Z",
+    "created_at": "2026-10-07T04:07:00Z",
+    "updated_at": "2026-10-07T04:07:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-012",
+    "threat_id": "thr-012",
+    "title": "Initial-access broker post",
+    "severity": "high",
+    "category": "exploit",
+    "status": "active",
+    "confidence": 60,
+    "description": "Indicator related to an exploit offer. Check patch status of the affected software.",
+    "tags": [
+      "exploit",
+      "forum"
+    ],
+    "source": {
+      "source_id": "src-04",
+      "name": "BreachForums Mirror"
+    },
+    "indicators": [
+      {
+        "type": "ip",
+        "value": "198.51.100.175"
+      }
+    ],
+    "detected_at": "2026-10-07T04:01:00Z",
+    "first_seen": "2026-10-07T04:01:00Z",
+    "last_seen": "2026-10-07T04:01:00Z",
+    "created_at": "2026-10-07T04:01:00Z",
+    "updated_at": "2026-10-07T04:01:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-013",
+    "threat_id": "thr-013",
+    "title": "New ransomware builder advertised",
+    "severity": "high",
+    "category": "ransomware",
+    "status": "active",
+    "confidence": 90,
+    "description": "Indicator linked to ransomware activity. Review related hosts and check for exposure of internal assets.",
+    "tags": [
+      "ransomware",
+      "paste-site"
+    ],
+    "source": {
+      "source_id": "src-06",
+      "name": "Onion Paste Archive"
+    },
+    "indicators": [
+      {
+        "type": "url",
+        "value": "http://demouryswd3bsvsh.onion/panel_99"
+      }
+    ],
+    "detected_at": "2026-10-07T03:47:00Z",
+    "first_seen": "2026-10-07T03:47:00Z",
+    "last_seen": "2026-10-07T03:47:00Z",
+    "created_at": "2026-10-07T03:47:00Z",
+    "updated_at": "2026-10-07T03:47:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-014",
+    "threat_id": "thr-014",
+    "title": "Credential harvesting server",
+    "severity": "low",
+    "category": "credential-theft",
+    "status": "active",
+    "confidence": 60,
+    "description": "Indicator associated with stolen or harvested credentials. Rotate affected accounts and review recent logins.",
+    "tags": [
+      "credential-theft",
+      "leak-site"
+    ],
+    "source": {
+      "source_id": "src-11",
+      "name": "Ransom Notice Wall"
+    },
+    "indicators": [
+      {
+        "type": "email",
+        "value": "support26@mail.example"
+      }
+    ],
+    "detected_at": "2026-10-07T03:00:00Z",
+    "first_seen": "2026-10-07T03:00:00Z",
+    "last_seen": "2026-10-07T03:00:00Z",
+    "created_at": "2026-10-07T03:00:00Z",
+    "updated_at": "2026-10-07T03:00:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-015",
+    "threat_id": "thr-015",
+    "title": "Spoofed payroll portal",
+    "severity": "low",
+    "category": "phishing",
+    "status": "active",
+    "confidence": 60,
+    "description": "Indicator used in a phishing campaign targeting customers or staff. Consider blocking and takedown.",
+    "tags": [
+      "phishing",
+      "leak-site"
+    ],
+    "source": {
+      "source_id": "src-02",
+      "name": "ShadowLeak Index"
+    },
+    "indicators": [
+      {
+        "type": "email",
+        "value": "admin16@mail.example"
+      }
+    ],
+    "detected_at": "2026-10-07T02:30:00Z",
+    "first_seen": "2026-10-07T02:30:00Z",
+    "last_seen": "2026-10-07T02:30:00Z",
+    "created_at": "2026-10-07T02:30:00Z",
+    "updated_at": "2026-10-07T02:30:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-016",
+    "threat_id": "thr-016",
+    "title": "Remote access tool advertised",
+    "severity": "high",
+    "category": "malware",
+    "status": "active",
+    "confidence": 80,
+    "description": "Indicator tied to a malware family. Correlate with endpoint telemetry before blocking.",
+    "tags": [
+      "malware",
+      "marketplace"
+    ],
+    "source": {
+      "source_id": "src-10",
+      "name": "Carder Row"
+    },
+    "indicators": [
+      {
+        "type": "hash",
+        "value": "d21b6b576eadcf971ff0397fb9a84c9cb44e30a426a61fb486ca25c26373be8e"
+      }
+    ],
+    "detected_at": "2026-10-07T01:09:00Z",
+    "first_seen": "2026-10-07T01:09:00Z",
+    "last_seen": "2026-10-07T01:09:00Z",
+    "created_at": "2026-10-07T01:09:00Z",
+    "updated_at": "2026-10-07T01:09:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-017",
+    "threat_id": "thr-017",
+    "title": "Customer database dump offered",
+    "severity": "medium",
+    "category": "data-leak",
+    "status": "active",
+    "confidence": 90,
+    "description": "Indicator pointing to leaked or offered data. Confirm whether it belongs to the monitored organisation.",
+    "tags": [
+      "data-leak",
+      "chat-channel"
+    ],
+    "source": {
+      "source_id": "src-08",
+      "name": "Ghostpost Channel"
+    },
+    "indicators": [
+      {
+        "type": "url",
+        "value": "http://demourw2yyp2oilb.onion/leak_88"
+      }
+    ],
+    "detected_at": "2026-10-06T22:59:00Z",
+    "first_seen": "2026-10-06T22:59:00Z",
+    "last_seen": "2026-10-06T22:59:00Z",
+    "created_at": "2026-10-06T22:59:00Z",
+    "updated_at": "2026-10-06T22:59:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-018",
+    "threat_id": "thr-018",
+    "title": "Public exploit for edge device",
+    "severity": "medium",
+    "category": "exploit",
+    "status": "active",
+    "confidence": 80,
+    "description": "Indicator related to an exploit offer. Check patch status of the affected software.",
+    "tags": [
+      "exploit",
+      "forum"
+    ],
+    "source": {
+      "source_id": "src-03",
+      "name": "TorBox Forums"
+    },
+    "indicators": [
+      {
+        "type": "url",
+        "value": "http://demourbbr62quifl.onion/leak_05"
+      }
+    ],
+    "detected_at": "2026-10-06T21:23:00Z",
+    "first_seen": "2026-10-06T21:23:00Z",
+    "last_seen": "2026-10-06T21:23:00Z",
+    "created_at": "2026-10-06T21:23:00Z",
+    "updated_at": "2026-10-06T21:23:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-019",
+    "threat_id": "thr-019",
+    "title": "New ransomware builder advertised",
+    "severity": "low",
+    "category": "ransomware",
+    "status": "active",
+    "confidence": 60,
+    "description": "Indicator linked to ransomware activity. Review related hosts and check for exposure of internal assets.",
+    "tags": [
+      "ransomware",
+      "marketplace"
+    ],
+    "source": {
+      "source_id": "src-10",
+      "name": "Carder Row"
+    },
+    "indicators": [
+      {
+        "type": "hash",
+        "value": "bb3059887476bbf1b872e3b0f62021d1df178959106250b63fb7206b84934fa8"
+      }
+    ],
+    "detected_at": "2026-10-06T21:09:00Z",
+    "first_seen": "2026-10-06T21:09:00Z",
+    "last_seen": "2026-10-06T21:09:00Z",
+    "created_at": "2026-10-06T21:09:00Z",
+    "updated_at": "2026-10-06T21:09:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-020",
+    "threat_id": "thr-020",
+    "title": "Admin panel credentials listed",
+    "severity": "medium",
+    "category": "credential-theft",
+    "status": "active",
+    "confidence": 90,
+    "description": "Indicator associated with stolen or harvested credentials. Rotate affected accounts and review recent logins.",
+    "tags": [
+      "credential-theft",
+      "forum"
+    ],
+    "source": {
+      "source_id": "src-04",
+      "name": "BreachForums Mirror"
+    },
+    "indicators": [
+      {
+        "type": "url",
+        "value": "http://demourdojzxorvmx.onion/panel_59"
+      }
+    ],
+    "detected_at": "2026-10-06T20:50:00Z",
+    "first_seen": "2026-10-06T20:50:00Z",
+    "last_seen": "2026-10-06T20:50:00Z",
+    "created_at": "2026-10-06T20:50:00Z",
+    "updated_at": "2026-10-06T20:50:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-021",
+    "threat_id": "thr-021",
+    "title": "Fake delivery-tracking campaign",
+    "severity": "medium",
+    "category": "phishing",
+    "status": "active",
+    "confidence": 90,
+    "description": "Indicator used in a phishing campaign targeting customers or staff. Consider blocking and takedown.",
+    "tags": [
+      "phishing",
+      "forum"
+    ],
+    "source": {
+      "source_id": "src-09",
+      "name": "DarkLedger Board"
+    },
+    "indicators": [
+      {
+        "type": "email",
+        "value": "billing21@mail.example"
+      }
+    ],
+    "detected_at": "2026-10-06T20:19:00Z",
+    "first_seen": "2026-10-06T20:19:00Z",
+    "last_seen": "2026-10-06T20:19:00Z",
+    "created_at": "2026-10-06T20:19:00Z",
+    "updated_at": "2026-10-06T20:19:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-022",
+    "threat_id": "thr-022",
+    "title": "Loader sample with new packer",
+    "severity": "high",
+    "category": "malware",
+    "status": "active",
+    "confidence": 90,
+    "description": "Indicator tied to a malware family. Correlate with endpoint telemetry before blocking.",
+    "tags": [
+      "malware",
+      "forum"
+    ],
+    "source": {
+      "source_id": "src-09",
+      "name": "DarkLedger Board"
+    },
+    "indicators": [
+      {
+        "type": "hash",
+        "value": "3f93199e6e56a50d8fe02afeb2ce227c91f31d6a6def9d362d6c3a63b508f41c"
+      }
+    ],
+    "detected_at": "2026-10-06T19:56:00Z",
+    "first_seen": "2026-10-06T19:56:00Z",
+    "last_seen": "2026-10-06T19:56:00Z",
+    "created_at": "2026-10-06T19:56:00Z",
+    "updated_at": "2026-10-06T19:56:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-023",
+    "threat_id": "thr-023",
+    "title": "Employee records sample posted",
+    "severity": "critical",
+    "category": "data-leak",
+    "status": "active",
+    "confidence": 70,
+    "description": "Indicator pointing to leaked or offered data. Confirm whether it belongs to the monitored organisation.",
+    "tags": [
+      "data-leak",
+      "forum"
+    ],
+    "source": {
+      "source_id": "src-03",
+      "name": "TorBox Forums"
+    },
+    "indicators": [
+      {
+        "type": "url",
+        "value": "http://demourtxqigbntcz.onion/market_69"
+      }
+    ],
+    "detected_at": "2026-10-06T19:39:00Z",
+    "first_seen": "2026-10-06T19:39:00Z",
+    "last_seen": "2026-10-06T19:39:00Z",
+    "created_at": "2026-10-06T19:39:00Z",
+    "updated_at": "2026-10-06T19:39:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-024",
+    "threat_id": "thr-024",
+    "title": "Zero-day exploit offered for sale",
+    "severity": "critical",
+    "category": "exploit",
+    "status": "active",
+    "confidence": 90,
+    "description": "Indicator related to an exploit offer. Check patch status of the affected software.",
+    "tags": [
+      "exploit",
+      "leak-site"
+    ],
+    "source": {
+      "source_id": "src-02",
+      "name": "ShadowLeak Index"
+    },
+    "indicators": [
+      {
+        "type": "ip",
+        "value": "192.0.2.189"
+      }
+    ],
+    "detected_at": "2026-10-06T19:02:00Z",
+    "first_seen": "2026-10-06T19:02:00Z",
+    "last_seen": "2026-10-06T19:02:00Z",
+    "created_at": "2026-10-06T19:02:00Z",
+    "updated_at": "2026-10-06T19:02:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-025",
+    "threat_id": "thr-025",
+    "title": "New ransomware builder advertised",
+    "severity": "medium",
+    "category": "ransomware",
+    "status": "active",
+    "confidence": 70,
+    "description": "Indicator linked to ransomware activity. Review related hosts and check for exposure of internal assets.",
+    "tags": [
+      "ransomware",
+      "marketplace"
+    ],
+    "source": {
+      "source_id": "src-10",
+      "name": "Carder Row"
+    },
+    "indicators": [
+      {
+        "type": "hash",
+        "value": "4cbeac4f5a283f73d0d8b88eb503ca5e08e1befb41eeba739298100392a7bdd6"
+      }
+    ],
+    "detected_at": "2026-10-06T18:48:00Z",
+    "first_seen": "2026-10-06T18:48:00Z",
+    "last_seen": "2026-10-06T18:48:00Z",
+    "created_at": "2026-10-06T18:48:00Z",
+    "updated_at": "2026-10-06T18:48:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-026",
+    "threat_id": "thr-026",
+    "title": "Stealer log bundle posted",
+    "severity": "critical",
+    "category": "credential-theft",
+    "status": "active",
+    "confidence": 80,
+    "description": "Indicator associated with stolen or harvested credentials. Rotate affected accounts and review recent logins.",
+    "tags": [
+      "credential-theft",
+      "marketplace"
+    ],
+    "source": {
+      "source_id": "src-05",
+      "name": "0-Day Payload Hub"
+    },
+    "indicators": [
+      {
+        "type": "ip",
+        "value": "203.0.113.75"
+      }
+    ],
+    "detected_at": "2026-10-06T17:57:00Z",
+    "first_seen": "2026-10-06T17:57:00Z",
+    "last_seen": "2026-10-06T17:57:00Z",
+    "created_at": "2026-10-06T17:57:00Z",
+    "updated_at": "2026-10-06T17:57:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-027",
+    "threat_id": "thr-027",
+    "title": "Spoofed payroll portal",
+    "severity": "critical",
+    "category": "phishing",
+    "status": "active",
+    "confidence": 90,
+    "description": "Indicator used in a phishing campaign targeting customers or staff. Consider blocking and takedown.",
+    "tags": [
+      "phishing",
+      "chat-channel"
+    ],
+    "source": {
+      "source_id": "src-08",
+      "name": "Ghostpost Channel"
+    },
+    "indicators": [
+      {
+        "type": "domain",
+        "value": "secure-login-87.example"
+      }
+    ],
+    "detected_at": "2026-10-06T16:49:00Z",
+    "first_seen": "2026-10-06T16:49:00Z",
+    "last_seen": "2026-10-06T16:49:00Z",
+    "created_at": "2026-10-06T16:49:00Z",
+    "updated_at": "2026-10-06T16:49:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-028",
+    "threat_id": "thr-028",
+    "title": "Banking trojan update",
+    "severity": "high",
+    "category": "malware",
+    "status": "active",
+    "confidence": 60,
+    "description": "Indicator tied to a malware family. Correlate with endpoint telemetry before blocking.",
+    "tags": [
+      "malware",
+      "paste-site"
+    ],
+    "source": {
+      "source_id": "src-06",
+      "name": "Onion Paste Archive"
+    },
+    "indicators": [
+      {
+        "type": "ip",
+        "value": "203.0.113.134"
+      }
+    ],
+    "detected_at": "2026-10-06T16:22:00Z",
+    "first_seen": "2026-10-06T16:22:00Z",
+    "last_seen": "2026-10-06T16:22:00Z",
+    "created_at": "2026-10-06T16:22:00Z",
+    "updated_at": "2026-10-06T16:22:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-029",
+    "threat_id": "thr-029",
+    "title": "Customer database dump offered",
+    "severity": "high",
+    "category": "data-leak",
+    "status": "active",
+    "confidence": 70,
+    "description": "Indicator pointing to leaked or offered data. Confirm whether it belongs to the monitored organisation.",
+    "tags": [
+      "data-leak",
+      "paste-site"
+    ],
+    "source": {
+      "source_id": "src-06",
+      "name": "Onion Paste Archive"
+    },
+    "indicators": [
+      {
+        "type": "url",
+        "value": "http://demourkbhaxextnj.onion/leak_79"
+      }
+    ],
+    "detected_at": "2026-10-06T16:16:00Z",
+    "first_seen": "2026-10-06T16:16:00Z",
+    "last_seen": "2026-10-06T16:16:00Z",
+    "created_at": "2026-10-06T16:16:00Z",
+    "updated_at": "2026-10-06T16:16:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-030",
+    "threat_id": "thr-030",
+    "title": "Exploit-as-a-service listing",
+    "severity": "medium",
+    "category": "exploit",
+    "status": "active",
+    "confidence": 60,
+    "description": "Indicator related to an exploit offer. Check patch status of the affected software.",
+    "tags": [
+      "exploit",
+      "leak-site"
+    ],
+    "source": {
+      "source_id": "src-02",
+      "name": "ShadowLeak Index"
+    },
+    "indicators": [
+      {
+        "type": "hash",
+        "value": "7d7d5c08dc43c701c56775092998675ae2f425359870a720e6ad037f0e4c3555"
+      }
+    ],
+    "detected_at": "2026-10-06T15:52:00Z",
+    "first_seen": "2026-10-06T15:52:00Z",
+    "last_seen": "2026-10-06T15:52:00Z",
+    "created_at": "2026-10-06T15:52:00Z",
+    "updated_at": "2026-10-06T15:52:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-031",
+    "threat_id": "thr-031",
+    "title": "New ransomware builder advertised",
+    "severity": "medium",
+    "category": "ransomware",
+    "status": "active",
+    "confidence": 80,
+    "description": "Indicator linked to ransomware activity. Review related hosts and check for exposure of internal assets.",
+    "tags": [
+      "ransomware",
+      "marketplace"
+    ],
+    "source": {
+      "source_id": "src-05",
+      "name": "0-Day Payload Hub"
+    },
+    "indicators": [
+      {
+        "type": "hash",
+        "value": "1a6580af9d62d33691a62a15974823719714c713ee5f514ee7e39b6822c880bb"
+      }
+    ],
+    "detected_at": "2026-10-06T15:47:00Z",
+    "first_seen": "2026-10-06T15:47:00Z",
+    "last_seen": "2026-10-06T15:47:00Z",
+    "created_at": "2026-10-06T15:47:00Z",
+    "updated_at": "2026-10-06T15:47:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-032",
+    "threat_id": "thr-032",
+    "title": "Credential harvesting server",
+    "severity": "high",
+    "category": "credential-theft",
+    "status": "active",
+    "confidence": 90,
+    "description": "Indicator associated with stolen or harvested credentials. Rotate affected accounts and review recent logins.",
+    "tags": [
+      "credential-theft",
+      "forum"
+    ],
+    "source": {
+      "source_id": "src-09",
+      "name": "DarkLedger Board"
+    },
+    "indicators": [
+      {
+        "type": "email",
+        "value": "billing46@mail.example"
+      }
+    ],
+    "detected_at": "2026-10-06T14:02:00Z",
+    "first_seen": "2026-10-06T14:02:00Z",
+    "last_seen": "2026-10-06T14:02:00Z",
+    "created_at": "2026-10-06T14:02:00Z",
+    "updated_at": "2026-10-06T14:02:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-033",
+    "threat_id": "thr-033",
+    "title": "Phishing kit for banking login",
+    "severity": "medium",
+    "category": "phishing",
+    "status": "active",
+    "confidence": 90,
+    "description": "Indicator used in a phishing campaign targeting customers or staff. Consider blocking and takedown.",
+    "tags": [
+      "phishing",
+      "paste-site"
+    ],
+    "source": {
+      "source_id": "src-06",
+      "name": "Onion Paste Archive"
+    },
+    "indicators": [
+      {
+        "type": "email",
+        "value": "admin12@mail.example"
+      }
+    ],
+    "detected_at": "2026-10-06T13:11:00Z",
+    "first_seen": "2026-10-06T13:11:00Z",
+    "last_seen": "2026-10-06T13:11:00Z",
+    "created_at": "2026-10-06T13:11:00Z",
+    "updated_at": "2026-10-06T13:11:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-034",
+    "threat_id": "thr-034",
+    "title": "Banking trojan update",
+    "severity": "low",
+    "category": "malware",
+    "status": "active",
+    "confidence": 90,
+    "description": "Indicator tied to a malware family. Correlate with endpoint telemetry before blocking.",
+    "tags": [
+      "malware",
+      "marketplace"
+    ],
+    "source": {
+      "source_id": "src-05",
+      "name": "0-Day Payload Hub"
+    },
+    "indicators": [
+      {
+        "type": "ip",
+        "value": "192.0.2.85"
+      }
+    ],
+    "detected_at": "2026-10-06T12:35:00Z",
+    "first_seen": "2026-10-06T12:35:00Z",
+    "last_seen": "2026-10-06T12:35:00Z",
+    "created_at": "2026-10-06T12:35:00Z",
+    "updated_at": "2026-10-06T12:35:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-035",
+    "threat_id": "thr-035",
+    "title": "Source code archive leaked",
+    "severity": "low",
+    "category": "data-leak",
+    "status": "active",
+    "confidence": 90,
+    "description": "Indicator pointing to leaked or offered data. Confirm whether it belongs to the monitored organisation.",
+    "tags": [
+      "data-leak",
+      "marketplace"
+    ],
+    "source": {
+      "source_id": "src-10",
+      "name": "Carder Row"
+    },
+    "indicators": [
+      {
+        "type": "email",
+        "value": "support93@mail.example"
+      }
+    ],
+    "detected_at": "2026-10-06T12:25:00Z",
+    "first_seen": "2026-10-06T12:25:00Z",
+    "last_seen": "2026-10-06T12:25:00Z",
+    "created_at": "2026-10-06T12:25:00Z",
+    "updated_at": "2026-10-06T12:25:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-036",
+    "threat_id": "thr-036",
+    "title": "Public exploit for edge device",
+    "severity": "medium",
+    "category": "exploit",
+    "status": "active",
+    "confidence": 70,
+    "description": "Indicator related to an exploit offer. Check patch status of the affected software.",
+    "tags": [
+      "exploit",
+      "paste-site"
+    ],
+    "source": {
+      "source_id": "src-06",
+      "name": "Onion Paste Archive"
+    },
+    "indicators": [
+      {
+        "type": "url",
+        "value": "http://demourm5oww2ynj4.onion/leak_85"
+      }
+    ],
+    "detected_at": "2026-10-06T12:22:00Z",
+    "first_seen": "2026-10-06T12:22:00Z",
+    "last_seen": "2026-10-06T12:22:00Z",
+    "created_at": "2026-10-06T12:22:00Z",
+    "updated_at": "2026-10-06T12:22:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-037",
+    "threat_id": "thr-037",
+    "title": "Loader sample with new packer",
+    "severity": "high",
+    "category": "malware",
+    "status": "active",
+    "confidence": 90,
+    "description": "Indicator tied to a malware family. Correlate with endpoint telemetry before blocking.",
+    "tags": [
+      "malware",
+      "paste-site"
+    ],
+    "source": {
+      "source_id": "src-06",
+      "name": "Onion Paste Archive"
+    },
+    "indicators": [
+      {
+        "type": "ip",
+        "value": "198.51.100.70"
+      }
+    ],
+    "detected_at": "2026-10-06T12:20:00Z",
+    "first_seen": "2026-10-06T12:20:00Z",
+    "last_seen": "2026-10-06T12:20:00Z",
+    "created_at": "2026-10-06T12:20:00Z",
+    "updated_at": "2026-10-06T12:20:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-038",
+    "threat_id": "thr-038",
+    "title": "Fake delivery-tracking campaign",
+    "severity": "high",
+    "category": "phishing",
+    "status": "active",
+    "confidence": 70,
+    "description": "Indicator used in a phishing campaign targeting customers or staff. Consider blocking and takedown.",
+    "tags": [
+      "phishing",
+      "marketplace"
+    ],
+    "source": {
+      "source_id": "src-10",
+      "name": "Carder Row"
+    },
+    "indicators": [
+      {
+        "type": "domain",
+        "value": "account-verify-52.example"
+      }
+    ],
+    "detected_at": "2026-10-06T11:53:00Z",
+    "first_seen": "2026-10-06T11:53:00Z",
+    "last_seen": "2026-10-06T11:53:00Z",
+    "created_at": "2026-10-06T11:53:00Z",
+    "updated_at": "2026-10-06T11:53:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-039",
+    "threat_id": "thr-039",
+    "title": "Source code archive leaked",
+    "severity": "medium",
+    "category": "data-leak",
+    "status": "active",
+    "confidence": 80,
+    "description": "Indicator pointing to leaked or offered data. Confirm whether it belongs to the monitored organisation.",
+    "tags": [
+      "data-leak",
+      "marketplace"
+    ],
+    "source": {
+      "source_id": "src-05",
+      "name": "0-Day Payload Hub"
+    },
+    "indicators": [
+      {
+        "type": "url",
+        "value": "http://demour5zzbv2vg7n.onion/market_46"
+      }
+    ],
+    "detected_at": "2026-10-06T11:18:00Z",
+    "first_seen": "2026-10-06T11:18:00Z",
+    "last_seen": "2026-10-06T11:18:00Z",
+    "created_at": "2026-10-06T11:18:00Z",
+    "updated_at": "2026-10-06T11:18:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  },
+  {
+    "_id": "thr-040",
+    "threat_id": "thr-040",
+    "title": "BlackCat affiliate leak notice",
+    "severity": "high",
+    "category": "ransomware",
+    "status": "active",
+    "confidence": 80,
+    "description": "Indicator linked to ransomware activity. Review related hosts and check for exposure of internal assets.",
+    "tags": [
+      "ransomware",
+      "forum"
+    ],
+    "source": {
+      "source_id": "src-03",
+      "name": "TorBox Forums"
+    },
+    "indicators": [
+      {
+        "type": "hash",
+        "value": "0844b5f1e6d83700cb8fc6aae0eeeab6946a42ba1bddd3fc78729118fde454c8"
+      }
+    ],
+    "detected_at": "2026-10-06T11:18:00Z",
+    "first_seen": "2026-10-06T11:18:00Z",
+    "last_seen": "2026-10-06T11:18:00Z",
+    "created_at": "2026-10-06T11:18:00Z",
+    "updated_at": "2026-10-06T11:18:00Z",
+    "case_id": null,
+    "assigned_to": null,
+    "enrichment": {}
+  }
+]

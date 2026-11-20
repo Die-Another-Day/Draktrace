@@ -1,0 +1,23 @@
+[
+  {
+    "id": "TI-14b",
+    "area": "Integration",
+    "name": "RETEST fresh page load starts with empty search",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "id": "TI-02",
+    "area": "Threat Intel",
+    "name": "RETEST search \"critical\" returns only Critical threats",
+    "result": "PASS",
+    "detail": "n=4 sev=Critical"
+  },
+  {
+    "id": "TI-02b",
+    "area": "Threat Intel",
+    "name": "RETEST search \"high\" returns results (and no crash)",
+    "result": "PASS",
+    "detail": "n=12"
+  }
+]

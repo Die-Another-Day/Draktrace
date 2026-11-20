@@ -1,0 +1,307 @@
+/* INTEGRATION GLUE. Everything that makes the teammates' modules sit inside the new base lives here
+   so their own files stay as delivered. Delete a block = undo that one fix. */
+
+/* 1. Token bridge: Ateeb's kit names that the base does not define (shared names like --bg-0/--border/--radius already match) */
+:root{
+  --text-1:var(--text);--text-2:var(--text-dim);
+  --accent:var(--cyan);--accent-2:#4aa8ff;
+  --sev-critical:var(--critical);--sev-high:var(--high);--sev-medium:var(--medium);--sev-low:var(--low);
+  --gap:16px;--fast:150ms;--base:300ms;--slow:800ms;--font-ui:var(--font-body);
+}
+
+/* 2. z-index: base rule = overlays between 100 and 800 (palette 900, boot 2000). Ateeb's toasts were 1000. */
+.dt-toast__stack{z-index:800 !important}
+
+/* 3. Glass look for the teammates' cards (same surface as the base .card) */
+/* no backdrop-filter here: dozens of cards x a live canvas behind them was the main source of scroll/hover lag */
+.dt-card,.dt-stat,.threat-card,.stat-card{background:var(--card-bg);border-color:var(--border)}
+
+/* 4. Teammates' own page titles are replaced by the base PageHeader (decrypt/glitch title); keep their live controls */
+.cc{padding:0 !important;background:none !important;min-height:0 !important}
+.cc-head{justify-content:flex-end !important}
+.threat-page{background:transparent !important;min-height:0 !important;width:100% !important;padding:0 !important}
+.threat-page::before{display:none !important}
+.threat-header{justify-content:flex-end !important}
+
+/* 5. Phones: nothing may be wider than the screen (filters, crawler header, topbar title at 320 px) */
+@media (max-width: 760px) {
+  .filters { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .filters .search-box, .filters .reset-button { grid-column: 1 / -1; }
+  .filters select, .search-box input { min-width: 0; max-width: 100%; }
+  .crawler-host > div > div { max-width: 100%; }
+  .topbar .crumbs { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .topbar .crumbs strong { overflow: hidden; text-overflow: ellipsis; }
+}
+@media (max-width: 400px) {
+  .topbar-right { gap: 6px; }
+  .top-btn span { display: none; }
+}
+
+/* 6. Very narrow phones (320 px): long hashes, URLs and log lines wrap instead of widening the page */
+@media (max-width: 400px) {
+  .threat-card code, .details-modal code, .crawler-host, .crawler-host * { overflow-wrap: anywhere; word-break: break-word; }
+  .threat-page, .threat-list, .crawler-host { min-width: 0; max-width: 100%; }
+  .threat-card { max-width: 100%; }
+  .main, .content, .page { min-width: 0; max-width: 100%; }
+}
+
+/* 7. QA follow-up: keep shared chrome pinned, opaque and above scrolling content. */
+.topbar {
+  z-index: 50;
+  flex: 0 0 var(--topbar-h);
+  background: var(--bg-0);
+  isolation: isolate;
+}
+.ticker {
+  z-index: 49;
+  flex: 0 0 28px;
+  background: var(--bg-0);
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+.sidebar {
+  background: linear-gradient(180deg, #060c11, #04080c);
+  isolation: isolate;
+}
+.main,
+.content,
+.page,
+.cc,
+.cc-grid,
+.threat-page,
+.crawler-host {
+  min-width: 0;
+}
+.page-header {
+  align-items: flex-start;
+}
+.page-header > div:first-child {
+  flex: 1 1 22rem;
+  min-width: 0;
+}
+.page-header h1 {
+  font-size: clamp(1.375rem, 3.5vw, 2rem);
+  overflow-wrap: anywhere;
+}
+.page-header p {
+  max-width: min(640px, 100%);
+}
+
+/* 8. Tablet topbar: constrain the breadcrumb before the search control can collide with it. */
+@media (min-width: 761px) and (max-width: 1024px) {
+  .topbar {
+    gap: 10px;
+    padding-inline: 14px;
+  }
+  .crumbs {
+    flex: 0 1 32%;
+    max-width: 32%;
+    overflow: hidden;
+  }
+  .crumbs strong {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .cmd-btn {
+    flex: 1 1 150px;
+    min-width: 140px;
+    max-width: 260px;
+    margin-left: 0;
+  }
+  .topbar-right {
+    flex: 0 0 auto;
+    gap: 6px;
+    min-width: 0;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    gap: 8px;
+    padding-inline: 12px;
+  }
+  .crumbs {
+    flex: 1 1 auto;
+    max-width: none;
+    min-width: 0;
+  }
+  .crumbs strong {
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .cmd-btn {
+    flex: 0 0 38px;
+    min-width: 38px;
+    margin-left: 0;
+  }
+  .topbar-right {
+    flex: 0 0 auto;
+    gap: 6px;
+    margin-left: 0;
+  }
+  .sidebar {
+    z-index: 60;
+    background: #04080c;
+    opacity: 1;
+    backdrop-filter: none;
+  }
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .page-header > div:first-child {
+    flex-basis: auto;
+    width: 100%;
+  }
+}
+
+/* 9. Crawler list: names/statuses share one identity column and controls align consistently. */
+.cc-crawlers__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: initial;
+}
+.cc-crawlers__identity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.cc-crawlers__identity .dt-tip {
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+}
+.cc-crawlers__identity .dt-tip__trigger {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+.cc-crawlers__name {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: initial;
+}
+.cc-crawlers__identity .dt-badge {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.cc-crawlers__actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 6px;
+  min-width: 0;
+}
+@media (max-width: 1180px) {
+  .cc .cc-grid > .cc-crawlers-card {
+    grid-column: 1 / -1;
+  }
+}
+
+/* 10. Phone charts/cards: this rule intentionally comes after the old 1180px tablet rule. */
+@media (max-width: 640px) {
+  .cc .cc-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .cc .cc-grid > .cc-span-2,
+  .cc .cc-grid > .cc-span-3 {
+    grid-column: 1 / -1;
+  }
+  .cc .dt-card,
+  .cc .cc-grid > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .cc .cc-legend {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .cc .cc-legend__btn {
+    min-width: 0;
+    padding-inline: 6px;
+  }
+  .cc .cc-chart__axis {
+    gap: 4px;
+    font-size: clamp(8px, 2.2vw, 10px);
+    overflow: hidden;
+  }
+  .cc .cc-chart__axis span {
+    min-width: 0;
+    white-space: nowrap;
+  }
+  .cc .cc-chart__axis span:not(.is-key) {
+    display: none;
+  }
+  .cc .cc-crawlers__row {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+  .cc .cc-crawlers__actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .cc .dt-gauge__label {
+    margin-top: 8px;
+    text-align: center;
+  }
+}
+
+/* 11. Threat activity chart: reserve space for four valid, non-overlapping time ticks. */
+.activity-chart,
+.activity-plot {
+  min-width: 0;
+}
+.activity-plot {
+  margin-bottom: 20px;
+}
+.activity-x-axis {
+  display: block;
+  height: 14px;
+  white-space: nowrap;
+  overflow: visible;
+}
+.activity-x-axis__tick {
+  position: absolute;
+  top: 0;
+  max-width: 25%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.activity-x-axis__tick--start { text-align: left; }
+.activity-x-axis__tick--middle { text-align: center; }
+.activity-x-axis__tick--end { text-align: right; }
+
+/* 12. Small controls transition quickly; avoid slow hover feedback and excess motion. */
+@media (hover: hover) and (pointer: fine) {
+  .nav-item,
+  .nav-icon,
+  .dt-tip__trigger,
+  .cc .dt-btn,
+  .threat-card {
+    transition-duration: 160ms;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .topbar,
+  .ticker,
+  .sidebar,
+  .nav-item,
+  .nav-icon,
+  .cc .dt-btn,
+  .threat-card {
+    transition: none !important;
+  }
+}

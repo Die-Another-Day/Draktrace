@@ -1,0 +1,79 @@
+[
+  {
+    "id": "TI-14",
+    "area": "Integration",
+    "name": "RETEST filters persist across tab switch",
+    "result": "PASS",
+    "detail": "tor,High,Oldest 1 results"
+  },
+  {
+    "id": "TI-14b",
+    "area": "Integration",
+    "name": "RETEST after full page reload filters start clean",
+    "result": "PASS",
+    "detail": ""
+  },
+  {
+    "id": "TI-02",
+    "area": "Threat Intel",
+    "name": "RETEST search \"critical\" returns only Critical threats",
+    "result": "PASS",
+    "detail": "n=4 sev=Critical"
+  },
+  {
+    "id": "TI-13",
+    "area": "Threat Intel",
+    "name": "RETEST clipboard denied shows COPY FAILED then reverts",
+    "result": "PASS",
+    "detail": "COPY FAILED -> COPY"
+  },
+  {
+    "id": "TI-12",
+    "area": "Threat Intel",
+    "name": "RETEST backdrop click closes and focus returns to card; scroll lock released",
+    "result": "PASS",
+    "detail": "focus=threat-card overflow=\"\""
+  },
+  {
+    "id": "CR-05",
+    "area": "Crawler",
+    "name": "RETEST resume logs \"resumed\", first start logs \"dispatched\"",
+    "result": "PASS",
+    "detail": "[\"Crawler dispatched. Tor routing circuit active.\",\"Crawler resumed. Tor routing circuit active.\"]"
+  },
+  {
+    "id": "CR-05b",
+    "area": "Command Center",
+    "name": "RETEST Command Center feed shows \"resumed\" event",
+    "result": "PASS",
+    "detail": "matches=1"
+  },
+  {
+    "id": "ST-01a",
+    "area": "Status",
+    "name": "RETEST all-idle: top bar / Command Center / Threat Intel do not claim LIVE",
+    "result": "PASS",
+    "detail": "IDLE,STANDBY | TI=IDLE"
+  },
+  {
+    "id": "ST-01b",
+    "area": "Status",
+    "name": "RETEST running: all three show LIVE",
+    "result": "PASS",
+    "detail": "LIVE,LIVE MONITORING | TI=LIVE"
+  },
+  {
+    "id": "ST-01c",
+    "area": "Status",
+    "name": "RETEST feed paused → PAUSED; fleet stopped + feed on → STANDBY; top bar STOPPED",
+    "result": "PASS",
+    "detail": "PAUSED / STANDBY / STOPPED"
+  },
+  {
+    "id": "ST-01d",
+    "area": "Status",
+    "name": "RETEST no console errors during status tour",
+    "result": "PASS",
+    "detail": "[]"
+  }
+]

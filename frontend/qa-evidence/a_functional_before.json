@@ -1,0 +1,184 @@
+[
+  {
+    "id": "CR-01",
+    "area": "Crawler",
+    "name": "Initial state IDLE; only START and RESET enabled",
+    "result": "PASS",
+    "detail": "{\"start\":true,\"pause\":false,\"stop\":false,\"reset\":true}● IDLE"
+  },
+  {
+    "id": "CR-02",
+    "area": "Crawler",
+    "name": "START→PAUSE→RESUME→STOP→RESET: button enablement + badge correct at every step",
+    "result": "PASS",
+    "detail": "start:ok | pause:ok | resume:ok | stop:ok | reset:ok"
+  },
+  {
+    "id": "CR-03",
+    "area": "Crawler",
+    "name": "Counters monotonic while running; crawled ≤ discovered; progress ≤ 100",
+    "result": "PASS",
+    "detail": "18420/22400/82% 18421/22402/82% 18422/22402/82% 18423/22402/82% 18424/22405/82% 18425/22405/82%"
+  },
+  {
+    "id": "CR-04",
+    "area": "Crawler",
+    "name": "Crawl speed 5x yields materially more pages/sec than 1x",
+    "result": "PASS",
+    "detail": "1x=0.83/s 5x=4.50/s"
+  },
+  {
+    "id": "CR-05",
+    "area": "Crawler",
+    "name": "Resuming from PAUSED logs a \"resumed\" message (not a fresh \"dispatched\")",
+    "result": "FAIL",
+    "detail": "[\"Crawler dispatched. Tor routing circuit active.\",\"Crawler dispatched. Tor routing circuit active.\"]"
+  },
+  {
+    "id": "CR-06",
+    "area": "Crawler",
+    "name": "Rapid repeated STOP/START clicks (15×) leave a consistent state with no console errors",
+    "result": "PASS",
+    "detail": "● RUNNING problems=[]"
+  },
+  {
+    "id": "CR-07",
+    "area": "Crawler",
+    "name": "CLEAR empties the activity log",
+    "result": "PASS",
+    "detail": "log rows right after clear=1"
+  },
+  {
+    "id": "CR-08",
+    "area": "Crawler",
+    "name": "RESET while running → IDLE, 0 crawled, 0%",
+    "result": "PASS",
+    "detail": "{\"crawled\":0,\"disc\":100,\"prog\":0}● IDLE"
+  },
+  {
+    "id": "CR-09",
+    "area": "Crawler",
+    "name": "URL input present (instructions: \"URL validation\")",
+    "result": "FAIL",
+    "detail": "inputs on Crawler page=0; target URL is read-only text"
+  },
+  {
+    "id": "CR-10",
+    "area": "Crawler",
+    "name": "Error state representable (instructions: \"running, paused, stopped and error states\")",
+    "result": "FAIL",
+    "detail": "Static review: BADGES map has only running/paused/stopped/idle; no code path sets an error status"
+  },
+  {
+    "id": "CR-11",
+    "area": "Integration",
+    "name": "Crawler keeps running & counters grow across tab switches; hero chip shows LIVE",
+    "result": "PASS",
+    "detail": "chip=\"LIVE crawler\" badge=\"● RUNNING\" crawled 18421->18425"
+  },
+  {
+    "id": "TI-01",
+    "area": "Threat Intel",
+    "name": "Search matches name/source/IOC (full+partial)/type/status, case-insens., trims; regex chars and 5000-char input handled",
+    "result": "PASS",
+    "detail": "{\"name\":6,\"src\":4,\"ioc\":1,\"iocPartial\":1,\"type\":13,\"status\":12,\"padded\":1,\"none\":0,\"regex\":0,\"regex2\":0,\"long\":0,\"sev\":0} empty=\"No threats found\" problems=0"
+  },
+  {
+    "id": "TI-02",
+    "area": "Threat Intel",
+    "name": "Searching a severity word (\"critical\") returns matches",
+    "result": "FAIL",
+    "detail": "results=0; haystack = name+IOC+source+type+status (placeholder: \"threat, IOC or source\")"
+  },
+  {
+    "id": "TI-03",
+    "area": "Threat Intel",
+    "name": "Each severity/type/source filter returns only matching cards; \"N results\" label correct",
+    "result": "PASS",
+    "detail": "40 threats, 10 sources"
+  },
+  {
+    "id": "TI-04",
+    "area": "Threat Intel",
+    "name": "Combined severity+type filter equals the intersection",
+    "result": "PASS",
+    "detail": "ui=1 expected=1"
+  },
+  {
+    "id": "TI-05",
+    "area": "Threat Intel",
+    "name": "Combined filters + no match → empty state; \"Clear filters\" restores all",
+    "result": "PASS",
+    "detail": "empty=1 restored=40/40 vals=All,All,"
+  },
+  {
+    "id": "TI-06",
+    "area": "Threat Intel",
+    "name": "Sort \"Highest severity\" is non-increasing",
+    "result": "PASS",
+    "detail": "first=Critical last=Low"
+  },
+  {
+    "id": "TI-07",
+    "area": "Threat Intel",
+    "name": "Under \"Highest severity\", equal-severity cards keep newest-first order",
+    "result": "PASS",
+    "detail": "compared relative-time labels"
+  },
+  {
+    "id": "TI-08",
+    "area": "Threat Intel",
+    "name": "Sort Oldest / Newest order by detection time",
+    "result": "PASS",
+    "detail": "oldestFirst=true newestFirst=true"
+  },
+  {
+    "id": "TI-09",
+    "area": "Threat Intel",
+    "name": "Details modal shows same name/IOC; COPY puts exact IOC on clipboard; label COPIED",
+    "result": "PASS",
+    "detail": "title=true ioc=true clipboard=true label=COPIED"
+  },
+  {
+    "id": "TI-10",
+    "area": "Threat Intel",
+    "name": "COPIED label reverts to COPY after ~1.4 s",
+    "result": "PASS",
+    "detail": "COPY"
+  },
+  {
+    "id": "TI-11",
+    "area": "Threat Intel",
+    "name": "Mark as Reviewed: badge flips, button disabled, status searchable & persistent",
+    "result": "PASS",
+    "detail": "before=New after=Reviewed disabled=true hits=1"
+  },
+  {
+    "id": "TI-12",
+    "area": "Threat Intel",
+    "name": "Modal: Enter opens, backdrop click closes, scroll lock released, focus returns to the card",
+    "result": "FAIL",
+    "detail": "closed=true lock=hidden-> focus="
+  },
+  {
+    "id": "TI-13",
+    "area": "Threat Intel",
+    "name": "When clipboard write is denied/unavailable the user gets visible feedback",
+    "result": "FAIL",
+    "detail": "label after failure=\"COPY\", toasts=0"
+  },
+  {
+    "id": "TI-14",
+    "area": "Integration",
+    "name": "Filter state persistence",
+    "result": "ERROR",
+    "detail": "locator.click: Timeout 30000ms exceeded."
+  },
+  {
+    "id": "TI-15",
+    "area": "Threat Intel",
+    "name": "After 16 s of crawling new threats appear; header total = Σ severity cards",
+    "result": "PASS",
+    "detail": "cards 40->45; total 40->45; Σsev=45"
+  }
+]

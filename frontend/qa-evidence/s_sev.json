@@ -1,0 +1,9 @@
+[
+  {
+    "id": "SEV-768",
+    "area": "Layout",
+    "name": "Severity Distribution legend stays inside its card at 320–1920 px (incl. 768x1024), no clipped text, no page overflow",
+    "result": "PASS",
+    "detail": "320:1col,out=0,txtclip=false 375:2col,out=0,txtclip=false 414:2col,out=0,txtclip=false 640:4col,out=0,txtclip=false 700:2col,out=0,txtclip=false 768:1col,out=0,txtclip=false 900:1col,out=0,txtclip=false 1024:2col,out=0,txtclip=false 1180:3col,out=0,txtclip=false 1280:2col,out=0,txtclip=false 1440:2col,out=0,txtclip=false 1920:3col,out=0,txtclip=false"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "src-01",
+    "name": "Hydra Market Relay",
+    "type": "marketplace",
+    "url": "http://demo01hugo274paf.onion",
+    "status": "online",
+    "lastCrawled": "2026-10-07T04:32:00Z",
+    "pagesCrawled": 2535,
+    "threatsFound": 1
+  },
+  {
+    "id": "src-02",
+    "name": "ShadowLeak Index",
+    "type": "leak-site",
+    "url": "http://demo02hsg4a7unzq.onion",
+    "status": "online",
+    "lastCrawled": "2026-10-07T02:30:00Z",
+    "pagesCrawled": 5060,
+    "threatsFound": 3
+  },
+  {
+    "id": "src-03",
+    "name": "TorBox Forums",
+    "type": "forum",
+    "url": "http://demo03wwyevfss5j.onion",
+    "status": "online",
+    "lastCrawled": "2026-10-07T09:46:00Z",
+    "pagesCrawled": 5904,
+    "threatsFound": 4
+  },
+  {
+    "id": "src-04",
+    "name": "BreachForums Mirror",
+    "type": "forum",
+    "url": "http://demo04tbxx53fz7h.onion",
+    "status": "online",
+    "lastCrawled": "2026-10-07T08:49:00Z",
+    "pagesCrawled": 1686,
+    "threatsFound": 3
+  },
+  {
+    "id": "src-05",
+    "name": "0-Day Payload Hub",
+    "type": "marketplace",
+    "url": "http://demo0537zq26boid.onion",
+    "status": "online",
+    "lastCrawled": "2026-10-07T05:45:00Z",
+    "pagesCrawled": 4217,
+    "threatsFound": 5
+  },
+  {
+    "id": "src-06",
+    "name": "Onion Paste Archive",
+    "type": "paste-site",
+    "url": "http://demo06g36j6oh56q.onion",
+    "status": "online",
+    "lastCrawled": "2026-10-07T08:05:00Z",
+    "pagesCrawled": 7591,
+    "threatsFound": 8
+  },
+  {
+    "id": "src-07",
+    "name": "CryptoVault Exchange",
+    "type": "marketplace",
+    "url": "http://demo07zt6z3msrac.onion",
+    "status": "offline",
+    "lastCrawled": "2026-10-05T19:30:00Z",
+    "pagesCrawled": 5060,
+    "threatsFound": 0
+  },
+  {
+    "id": "src-08",
+    "name": "Ghostpost Channel",
+    "type": "chat-channel",
+    "url": "http://demo08j57xmq7573.onion",
+    "status": "online",
+    "lastCrawled": "2026-10-07T09:18:00Z",
+    "pagesCrawled": 5904,
+    "threatsFound": 3
+  },
+  {
+    "id": "src-09",
+    "name": "DarkLedger Board",
+    "type": "forum",
+    "url": "http://demo09csu5g4q4l3.onion",
+    "status": "online",
+    "lastCrawled": "2026-10-07T08:55:00Z",
+    "pagesCrawled": 2530,
+    "threatsFound": 5
+  },
+  {
+    "id": "src-10",
+    "name": "Carder Row",
+    "type": "marketplace",
+    "url": "http://demo106er7xgm2j4.onion",
+    "status": "online",
+    "lastCrawled": "2026-10-07T01:09:00Z",
+    "pagesCrawled": 4217,
+    "threatsFound": 5
+  },
+  {
+    "id": "src-11",
+    "name": "Ransom Notice Wall",
+    "type": "leak-site",
+    "url": "http://demo11afa4fmphcr.onion",
+    "status": "online",
+    "lastCrawled": "2026-10-07T06:03:00Z",
+    "pagesCrawled": 1686,
+    "threatsFound": 3
+  },
+  {
+    "id": "src-12",
+    "name": "Underground Docs",
+    "type": "paste-site",
+    "url": "http://demo12wjau7io6is.onion",
+    "status": "offline",
+    "lastCrawled": "2026-10-05T07:30:00Z",
+    "pagesCrawled": 2530,
+    "threatsFound": 0
+  }
+]

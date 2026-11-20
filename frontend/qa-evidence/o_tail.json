@@ -1,0 +1,9 @@
+[
+  {
+    "id": "TI-15",
+    "area": "Threat Intel",
+    "name": "After 16 s of crawling new threats appear; header total = Σ severity cards",
+    "result": "PASS",
+    "detail": "cards 40->45; total 40->45; Σsev=45"
+  }
+]

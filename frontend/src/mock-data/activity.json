@@ -1,0 +1,205 @@
+[
+  {
+    "time": "2026-10-07T10:28:00Z",
+    "level": "info",
+    "severity": "system",
+    "text": "Onion Forums running on TorBox Forums",
+    "id": "act-001"
+  },
+  {
+    "time": "2026-10-07T10:24:00Z",
+    "level": "error",
+    "severity": "critical",
+    "text": "Zero-day exploit offered for sale on a marketplace",
+    "id": "act-027"
+  },
+  {
+    "time": "2026-10-07T10:21:00Z",
+    "level": "info",
+    "severity": "system",
+    "text": "Paste Sites running on Onion Paste Archive",
+    "id": "act-002"
+  },
+  {
+    "time": "2026-10-07T10:14:00Z",
+    "level": "info",
+    "severity": "system",
+    "text": "Marketplaces paused on Hydra Market Relay",
+    "id": "act-003"
+  },
+  {
+    "time": "2026-10-07T10:07:00Z",
+    "level": "info",
+    "severity": "system",
+    "text": "Leak Channels idle on Ransom Notice Wall",
+    "id": "act-004"
+  },
+  {
+    "time": "2026-10-07T10:03:00Z",
+    "level": "error",
+    "severity": "critical",
+    "text": "Credential dump for corporate VPN posted on a forum",
+    "id": "act-029"
+  },
+  {
+    "time": "2026-10-07T09:58:00Z",
+    "level": "error",
+    "severity": "critical",
+    "text": "Ransomware leak site published victim list",
+    "id": "act-028"
+  },
+  {
+    "time": "2026-10-07T09:46:00Z",
+    "level": "info",
+    "severity": "medium",
+    "text": "New ransomware builder advertised (hash) from TorBox Forums",
+    "id": "act-005"
+  },
+  {
+    "time": "2026-10-07T09:18:00Z",
+    "level": "info",
+    "severity": "medium",
+    "text": "Stealer log bundle posted (email) from Ghostpost Channel",
+    "id": "act-006"
+  },
+  {
+    "time": "2026-10-07T08:55:00Z",
+    "level": "info",
+    "severity": "medium",
+    "text": "Brand-impersonation domain cluster (email) from DarkLedger Board",
+    "id": "act-007"
+  },
+  {
+    "time": "2026-10-07T08:49:00Z",
+    "level": "warn",
+    "severity": "high",
+    "text": "Banking trojan update (hash) from BreachForums Mirror",
+    "id": "act-008"
+  },
+  {
+    "time": "2026-10-07T08:05:00Z",
+    "level": "success",
+    "severity": "low",
+    "text": "Internal documents bundle (hash) from Onion Paste Archive",
+    "id": "act-009"
+  },
+  {
+    "time": "2026-10-07T07:46:00Z",
+    "level": "info",
+    "severity": "medium",
+    "text": "Public exploit for edge device (hash) from Onion Paste Archive",
+    "id": "act-010"
+  },
+  {
+    "time": "2026-10-07T06:03:00Z",
+    "level": "success",
+    "severity": "low",
+    "text": "New ransomware builder advertised (domain) from Ransom Notice Wall",
+    "id": "act-011"
+  },
+  {
+    "time": "2026-10-07T05:45:00Z",
+    "level": "success",
+    "severity": "low",
+    "text": "Stealer log bundle posted (url) from 0-Day Payload Hub",
+    "id": "act-012"
+  },
+  {
+    "time": "2026-10-07T04:59:00Z",
+    "level": "success",
+    "severity": "low",
+    "text": "Phishing kit for banking login (url) from Ransom Notice Wall",
+    "id": "act-013"
+  },
+  {
+    "time": "2026-10-07T04:32:00Z",
+    "level": "info",
+    "severity": "medium",
+    "text": "Remote access tool advertised (hash) from Hydra Market Relay",
+    "id": "act-014"
+  },
+  {
+    "time": "2026-10-07T04:07:00Z",
+    "level": "warn",
+    "severity": "high",
+    "text": "Employee records sample posted (hash) from DarkLedger Board",
+    "id": "act-015"
+  },
+  {
+    "time": "2026-10-07T04:01:00Z",
+    "level": "warn",
+    "severity": "high",
+    "text": "Initial-access broker post (ip) from BreachForums Mirror",
+    "id": "act-016"
+  },
+  {
+    "time": "2026-10-07T03:47:00Z",
+    "level": "warn",
+    "severity": "high",
+    "text": "New ransomware builder advertised (url) from Onion Paste Archive",
+    "id": "act-017"
+  },
+  {
+    "time": "2026-10-07T03:00:00Z",
+    "level": "success",
+    "severity": "low",
+    "text": "Credential harvesting server (email) from Ransom Notice Wall",
+    "id": "act-018"
+  },
+  {
+    "time": "2026-10-07T02:30:00Z",
+    "level": "success",
+    "severity": "low",
+    "text": "Spoofed payroll portal (email) from ShadowLeak Index",
+    "id": "act-019"
+  },
+  {
+    "time": "2026-10-07T01:09:00Z",
+    "level": "warn",
+    "severity": "high",
+    "text": "Remote access tool advertised (hash) from Carder Row",
+    "id": "act-020"
+  },
+  {
+    "time": "2026-10-06T22:59:00Z",
+    "level": "info",
+    "severity": "medium",
+    "text": "Customer database dump offered (url) from Ghostpost Channel",
+    "id": "act-021"
+  },
+  {
+    "time": "2026-10-06T21:23:00Z",
+    "level": "info",
+    "severity": "medium",
+    "text": "Public exploit for edge device (url) from TorBox Forums",
+    "id": "act-022"
+  },
+  {
+    "time": "2026-10-06T21:09:00Z",
+    "level": "success",
+    "severity": "low",
+    "text": "New ransomware builder advertised (hash) from Carder Row",
+    "id": "act-023"
+  },
+  {
+    "time": "2026-10-06T20:50:00Z",
+    "level": "info",
+    "severity": "medium",
+    "text": "Admin panel credentials listed (url) from BreachForums Mirror",
+    "id": "act-024"
+  },
+  {
+    "time": "2026-10-06T20:19:00Z",
+    "level": "info",
+    "severity": "medium",
+    "text": "Fake delivery-tracking campaign (email) from DarkLedger Board",
+    "id": "act-025"
+  },
+  {
+    "time": "2026-10-06T19:56:00Z",
+    "level": "warn",
+    "severity": "high",
+    "text": "Loader sample with new packer (hash) from DarkLedger Board",
+    "id": "act-026"
+  }
+]

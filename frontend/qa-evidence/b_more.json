@@ -1,0 +1,135 @@
+[
+  {
+    "id": "TI-14",
+    "area": "Integration",
+    "name": "Search/severity/sort retained after leaving and returning to Threat Intelligence",
+    "result": "FAIL",
+    "detail": "after return: search=\"\" severity=All sort=Newest"
+  },
+  {
+    "id": "TI-16",
+    "area": "Threat Intel",
+    "name": "Focus returns to the originating card after closing via Esc and via Close button",
+    "result": "PASS",
+    "detail": "Escape:Open details for Brand-impersonation domain cluster | close:Open details for Brand-impersonation domain cluster"
+  },
+  {
+    "id": "CC-01",
+    "area": "Command Center",
+    "name": "Severity counters equal underlying threats.json distribution",
+    "result": "PASS",
+    "detail": "ui=4,12,15,9 data=4,12,15,9 firstStat=26"
+  },
+  {
+    "id": "CC-02",
+    "area": "Command Center",
+    "name": "Clicking a severity card filters Recent activity and clicking again clears",
+    "result": "PASS",
+    "detail": "on=critical sub=\"Filtered: critical\" after=all"
+  },
+  {
+    "id": "CC-03",
+    "area": "Command Center",
+    "name": "Severity cards operable by keyboard (Enter selects, Space toggles)",
+    "result": "PASS",
+    "detail": "enter→high space→all"
+  },
+  {
+    "id": "CC-04",
+    "area": "Command Center",
+    "name": "Severity share bars sum to ~100%",
+    "result": "INFO",
+    "detail": "aria-valuenow=[null,\"10\",null,\"30\",null,\"38\",null,\"23\"]"
+  },
+  {
+    "id": "CC-05",
+    "area": "Command Center",
+    "name": "Per-crawler Start→Pause→Resume→Stop updates its badge",
+    "result": "PASS",
+    "detail": "initial=idle,idle,idle,idle start=running pause=paused stop=stopped"
+  },
+  {
+    "id": "CC-06",
+    "area": "Command Center",
+    "name": "Hero \"Simulate activity\" starts whole fleet; chip=LIVE; \"N running\" = 4",
+    "result": "PASS",
+    "detail": "chip=LIVE crawler 4 running"
+  },
+  {
+    "id": "CC-07",
+    "area": "Command Center",
+    "name": "Pause feed: header badge says PAUSED and no new feed lines/threats appear",
+    "result": "PASS",
+    "detail": "badge=\"PAUSED Resume feed\" feedUnchanged=true"
+  },
+  {
+    "id": "CC-08",
+    "area": "Command Center",
+    "name": "While feed is PAUSED crawlers still running & pages counter still advances (status consistency)",
+    "result": "INFO",
+    "detail": "stats changed while \"PAUSED\": false"
+  },
+  {
+    "id": "ST-01",
+    "area": "Command Center",
+    "name": "With every crawler IDLE, \"LIVE\"/\"LIVE MONITORING\" indicators should not claim live activity",
+    "result": "FAIL",
+    "detail": "topbar=\"LIVE\" cc badge=\"LIVE MONITORING Pause feed\" hero chip=\"IDLE crawler\""
+  },
+  {
+    "id": "CC-09",
+    "area": "Charts",
+    "name": "Chart accessible labels present on every chart SVG",
+    "result": "PASS",
+    "detail": "[\"Threats over time\",\"Severity distribution\"]"
+  },
+  {
+    "id": "RS-01",
+    "area": "Responsive",
+    "name": "Overflow / clipping per viewport and tab",
+    "result": "ERROR",
+    "detail": "page.screenshot: Timeout 30000ms exceeded."
+  },
+  {
+    "id": "AX-01",
+    "area": "Accessibility",
+    "name": "Every focusable element reached by Tab shows a visible focus indicator (45 stops, Command Center)",
+    "result": "PASS",
+    "detail": "44 stops ok"
+  },
+  {
+    "id": "AX-02",
+    "area": "Accessibility",
+    "name": "With prefers-reduced-motion: reduce, no infinite CSS animations keep running",
+    "result": "PASS",
+    "detail": "running=0 infinite=[]"
+  },
+  {
+    "id": "LY-01",
+    "area": "Layering",
+    "name": "No large fixed/absolute effect layer with pointer-events enabled",
+    "result": "PASS",
+    "detail": "all effect layers pointer-events:none"
+  },
+  {
+    "id": "LY-02",
+    "area": "Layering",
+    "name": "Centre of every visible button/nav/select/input is actually hit-testable (not covered)",
+    "result": "PASS",
+    "detail": "clean"
+  },
+  {
+    "id": "ST-02",
+    "area": "Stability",
+    "name": "Repeated navigation soak + console cleanliness",
+    "result": "ERROR",
+    "detail": "locator.click: Timeout 30000ms exceeded."
+  },
+  {
+    "id": "ST-04",
+    "area": "Stability",
+    "name": "Palette commands & boot skip",
+    "result": "ERROR",
+    "detail": "locator.waitFor: Timeout 30000ms exceeded."
+  }
+]

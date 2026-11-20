@@ -1,0 +1,86 @@
+# DarkTrace — local databases (development only)
+# Usage (from the repository root):
+#   cp database/.env.example database/.env   # then fill in passwords
+#   docker compose -f database/docker-compose.yml up -d
+#   docker compose -f database/docker-compose.yml ps
+#   docker compose -f database/docker-compose.yml down        # keeps data
+#   docker compose -f database/docker-compose.yml down -v     # wipes data (init scripts re-run)
+#
+# Init scripts run ONLY on first start with an empty volume:
+#   Postgres: sql/schema.sql then sql/seed.sql
+#   MongoDB:  nosql/init-mongo.js (validators + indexes; seed with seed.py after)
+#   Redis:    no init — dev_server.py already uses it for alerts (darktrace:alerts).
+# If you change an init script, wipe the volume (down -v) or apply it manually.
+# Never use these passwords in production; override them in database/.env.
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: darktrace-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-darktrace-dev}
+      POSTGRES_DB: ${POSTGRES_DB:-darktrace}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - darktrace-pgdata:/var/lib/postgresql/data
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./sql/seed.sql:/docker-entrypoint-initdb.d/02_seed.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-darktrace}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  mongo:
+    image: mongo:7
+    container_name: darktrace-mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER:-root}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:-darktrace-dev}
+      MONGO_INITDB_DATABASE: ${MONGO_DB:-darktrace}
+    ports:
+      - "${MONGO_PORT:-27017}:27017"
+    volumes:
+      - darktrace-mongodata:/data/db
+      - ./nosql/init-mongo.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: darktrace-redis
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - darktrace-redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # Optional web UI for MongoDB. Start with:
+  #   docker compose -f database/docker-compose.yml --profile tools up -d
+  #   http://localhost:8081  (login with MONGO_USER / MONGO_PASSWORD)
+  # mongo-express:
+  #   image: mongo-express:1
+  #   profiles: ["tools"]
+  #   environment:
+  #     ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_USER:-root}
+  #     ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_PASSWORD:-darktrace-dev}
+  #     ME_CONFIG_MONGODB_URL: mongodb://${MONGO_USER:-root}:${MONGO_PASSWORD:-darktrace-dev}@mongo:27017/
+  #   ports:
+  #     - "8081:8081"
+  #   depends_on:
+  #     mongo:
+  #       condition: service_healthy
+
+volumes:
+  darktrace-pgdata:
+  darktrace-mongodata:
+  darktrace-redisdata:

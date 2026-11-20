@@ -1,0 +1,82 @@
+[
+  {
+    "_id": "clog-001",
+    "job_id": "job_dev_001",
+    "crawler_id": "cr-01",
+    "crawler_name": "Onion Forums",
+    "source": {
+      "source_id": "src-03",
+      "name": "TorBox Forums",
+      "url": "http://demo03wwyevfss5j.onion"
+    },
+    "status": "idle",
+    "pages_crawled": 18420,
+    "pages_discovered": 22400,
+    "progress_pct": 72,
+    "throughput_per_min": 42,
+    "latency_ms": 168,
+    "tor_circuit": "A22D-31AA-88CD",
+    "logged_at": "2026-10-07T10:30:00Z",
+    "created_at": "2026-10-07T10:30:00Z"
+  },
+  {
+    "_id": "clog-002",
+    "job_id": "job_dev_002",
+    "crawler_id": "cr-02",
+    "crawler_name": "Paste Sites",
+    "source": {
+      "source_id": "src-06",
+      "name": "Onion Paste Archive",
+      "url": "http://demo06g36j6oh56q.onion"
+    },
+    "status": "idle",
+    "pages_crawled": 14980,
+    "pages_discovered": 18000,
+    "progress_pct": 45,
+    "throughput_per_min": 84,
+    "latency_ms": 199,
+    "tor_circuit": "44EF-E012-E012",
+    "logged_at": "2026-10-07T10:30:00Z",
+    "created_at": "2026-10-07T10:30:00Z"
+  },
+  {
+    "_id": "clog-003",
+    "job_id": "job_dev_003",
+    "crawler_id": "cr-03",
+    "crawler_name": "Marketplaces",
+    "source": {
+      "source_id": "src-01",
+      "name": "Hydra Market Relay",
+      "url": "http://demo01hugo274paf.onion"
+    },
+    "status": "idle",
+    "pages_crawled": 9650,
+    "pages_discovered": 14200,
+    "progress_pct": 31,
+    "throughput_per_min": 0,
+    "latency_ms": 190,
+    "tor_circuit": "E012-44EF-A22D",
+    "logged_at": "2026-10-07T10:30:00Z",
+    "created_at": "2026-10-07T10:30:00Z"
+  },
+  {
+    "_id": "clog-004",
+    "job_id": "job_dev_004",
+    "crawler_id": "cr-04",
+    "crawler_name": "Leak Channels",
+    "source": {
+      "source_id": "src-11",
+      "name": "Ransom Notice Wall",
+      "url": "http://demo11afa4fmphcr.onion"
+    },
+    "status": "idle",
+    "pages_crawled": 5870,
+    "pages_discovered": 9000,
+    "progress_pct": 0,
+    "throughput_per_min": 0,
+    "latency_ms": 160,
+    "tor_circuit": "7F3A-E012-91BC",
+    "logged_at": "2026-10-07T10:30:00Z",
+    "created_at": "2026-10-07T10:30:00Z"
+  }
+]

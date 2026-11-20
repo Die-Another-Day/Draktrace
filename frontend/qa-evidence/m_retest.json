@@ -1,0 +1,65 @@
+[
+  {
+    "id": "P3-BUG04",
+    "area": "CommandCenter",
+    "name": "Saksham BUG-04 RETEST: every severity filter shows events on load",
+    "result": "PASS",
+    "detail": "{\"critical\":1,\"high\":1,\"medium\":1,\"low\":1}"
+  },
+  {
+    "id": "P3-BUG08",
+    "area": "CommandCenter",
+    "name": "Saksham BUG-08 RETEST: second click on a chip clears the filter",
+    "result": "PASS",
+    "detail": "after two clicks: all"
+  },
+  {
+    "id": "P3-BUG04b",
+    "area": "CommandCenter",
+    "name": "Saksham BUG-04 RETEST: clicking the glowing Critical card lists critical events (not an empty list)",
+    "result": "PASS",
+    "detail": "Recent activity |  | Filtered: critical |  | All | Critical | High | Medium | Low | 22:56:10 | ERROR | Ransomware leak site published victim list | 23:01:10 | ERROR | Credential dump for c"
+  },
+  {
+    "id": "P3-BUG02",
+    "area": "CommandCenter",
+    "name": "Saksham BUG-02 RETEST: Threats-over-time line changes together with the live counters",
+    "result": "PASS",
+    "detail": "counters 4/12/15/9 -> 5/13/16/9; chart path changed=true; donut centre \"critical: 4high: 12medium: 15low: 9\" -> \"critical: 5high: 13medium: 16low: 9\""
+  },
+  {
+    "id": "P3-BUG05",
+    "area": "CommandCenter",
+    "name": "Saksham BUG-05 RETEST: running crawler progress never falls back over ~40 s",
+    "result": "PASS",
+    "detail": "bars=4; first=[82,83,68,65] last=[82,83,68,65]"
+  },
+  {
+    "id": "P3-BUG09",
+    "area": "CommandCenter",
+    "name": "Saksham BUG-09: feed never exceeds 60 lines",
+    "result": "PASS",
+    "detail": "lines now=52 (cap needs ~10 min of live feed to reach; see static check)"
+  },
+  {
+    "id": "P6-F1-375",
+    "area": "Tooltip",
+    "name": "Ateeb F1 RETEST at 375px: all 4 crawler tooltips inside the viewport, no sideways scroll",
+    "result": "FAIL",
+    "detail": "-1..200 | -26..203 | -17..211 | -13..214 (viewport 375)"
+  },
+  {
+    "id": "P6-F1-320",
+    "area": "Tooltip",
+    "name": "Ateeb F1 RETEST at 320px: all 4 crawler tooltips inside the viewport, no sideways scroll",
+    "result": "FAIL",
+    "detail": "-1..200 | -24..200 | -15..209 | -11..213 (viewport 320)"
+  },
+  {
+    "id": "P6-HOVER",
+    "area": "UI kit",
+    "name": "Ateeb v5 RETEST: threat card does not move on hover and stays hovered with the cursor on its bottom edge (10/10)",
+    "result": "PASS",
+    "detail": "moved 0px; hovered 10/10"
+  }
+]

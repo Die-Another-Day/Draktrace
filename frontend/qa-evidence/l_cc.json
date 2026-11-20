@@ -1,0 +1,100 @@
+[
+  {
+    "id": "GL-B3c",
+    "area": "Layout",
+    "name": "PDF Bug 3: phone bottom bar (.sidebar ≤760px), top bar and ticker are fully opaque",
+    "result": "PASS",
+    "detail": "375:sidebar=1 topbar=1 ticker=1 | 768:sidebar=0 topbar=1 ticker=1 | 1440:sidebar=0 topbar=1 ticker=1"
+  },
+  {
+    "id": "P3-BUG01",
+    "area": "CommandCenter",
+    "name": "Saksham BUG-01: Crawling-activity bars are drawn with non-zero height",
+    "result": "PASS",
+    "detail": "bar heights px=[204,240,201,262,274,194,279]"
+  },
+  {
+    "id": "P3-BUG03",
+    "area": "CommandCenter",
+    "name": "Saksham BUG-03: initial feed lines carry their own (distinct) timestamps, not all the page-load time",
+    "result": "PASS",
+    "detail": "26 lines, 26 distinct: [\"08:49:18\",\"09:12:18\",\"09:43:18\",\"10:02:18\",\"10:16:18\",\"11:52:18\",\"14:02:18\",\"15:23:18\"]"
+  },
+  {
+    "id": "P3-BUG04",
+    "area": "CommandCenter",
+    "name": "Saksham BUG-04: every severity filter (incl. Critical and Low) shows events on load",
+    "result": "FAIL",
+    "detail": "{\"critical\":0,\"high\":1,\"medium\":1,\"low\":1}"
+  },
+  {
+    "id": "P3-BUG08",
+    "area": "CommandCenter",
+    "name": "Saksham BUG-08: clicking a selected severity chip a second time clears the filter (like cards/legend)",
+    "result": "FAIL",
+    "detail": "after two clicks on \"high\": high"
+  },
+  {
+    "id": "P3-BUG12",
+    "area": "CommandCenter",
+    "name": "Saksham BUG-12: crawler progress equals pagesCrawled/pagesDiscovered in the data",
+    "result": "FAIL",
+    "detail": "Onion Forums:idle:72%vs82%; Paste Sites:idle:45%vs83%; Marketplaces:idle:31%vs68%; Leak Channels:idle:0%vs65%"
+  },
+  {
+    "id": "P3-BUG02",
+    "area": "CommandCenter",
+    "name": "Saksham BUG-02: when live counters rise, the time-based charts change too",
+    "result": "FAIL",
+    "detail": "threats 15->41; chart labels changed=false"
+  },
+  {
+    "id": "P3-BUG06",
+    "area": "CommandCenter",
+    "name": "Saksham BUG-06: with feed paused, running crawlers are not frozen (pages still advance)",
+    "result": "PASS",
+    "detail": "stats changed while feed paused: true"
+  },
+  {
+    "id": "P3-BUG05",
+    "area": "CommandCenter",
+    "name": "Saksham BUG-05: a running crawler's progress never falls back (e.g. 100 → 0) over ~36 s",
+    "result": "PASS",
+    "detail": ",,, | ,,, | ,,, | ,,, ... ,,,"
+  },
+  {
+    "id": "P6-F1",
+    "area": "Tooltip",
+    "name": "Ateeb F1: tooltips on the crawler names stay inside a 375 px viewport and cause no sideways scroll",
+    "result": "FAIL",
+    "detail": "{\"l\":-9,\"r\":192,\"vw\":375,\"sw\":365} | {\"l\":0,\"r\":0,\"vw\":375,\"sw\":365} | {\"l\":0,\"r\":0,\"vw\":375,\"sw\":365} | {\"l\":0,\"r\":0,\"vw\":375,\"sw\":365}"
+  },
+  {
+    "id": "P6-MODAL",
+    "area": "UI kit",
+    "name": "Ateeb v5: modal traps Tab / Shift+Tab (9 forward, 5 back stay inside)",
+    "result": "PASS",
+    "detail": "inside=true"
+  },
+  {
+    "id": "P6-HOVER",
+    "area": "UI kit",
+    "name": "Ateeb v5: cards do not move on hover (no lift that makes edge hover flicker)",
+    "result": "FAIL",
+    "detail": "card moved 3px"
+  },
+  {
+    "id": "CLAIM-H1",
+    "area": "Himanshu",
+    "name": "Report claims a URL input with empty/clearnet/protocol validation and an ERROR badge",
+    "result": "FAIL",
+    "detail": "inputs on Crawler tab=0; no URL field, no ERROR badge exists in this build"
+  },
+  {
+    "id": "CLAIM-H2",
+    "area": "Himanshu",
+    "name": "Report claims Pages Crawled \"strictly steps +1\" at every speed",
+    "result": "PASS",
+    "detail": "increments per 0.7 s at 1x: [0,1,0,1,1,0,1,1,0,1,1,0,1,1]"
+  }
+]

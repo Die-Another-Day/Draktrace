@@ -1,0 +1,83 @@
+[
+  {
+    "_id": "doc-001",
+    "doc_id": "doc-001",
+    "job_id": "job_dev_001",
+    "source": {
+      "source_id": "src-03",
+      "name": "TorBox Forums",
+      "url": "http://demo03wwyevfss5j.onion"
+    },
+    "url": "http://demo03wwyevfss5j.onion/thread/thr-001",
+    "title": "New ransomware builder advertised",
+    "raw_text": "Indicator linked to ransomware activity. Review related hosts and check for exposure of internal assets. [crawled raw post body - variable length, unparsed HTML/text as fetched]",
+    "content_hash": "419fd03dc3610509ea0e8f698f9b04960bad2347c15f73c9f3fd774118365fbf",
+    "language": "en",
+    "entities": [
+      {
+        "label": "ransomware",
+        "value": "419fd03dc3610509ea0e8f698f9b04960bad2347c15f73c9f3fd774118365fbf",
+        "type": "hash"
+      }
+    ],
+    "threat_ids": [
+      "thr-001"
+    ],
+    "fetched_at": "2026-10-07T09:46:00Z",
+    "created_at": "2026-10-07T09:46:00Z"
+  },
+  {
+    "_id": "doc-002",
+    "doc_id": "doc-002",
+    "job_id": "job_dev_001",
+    "source": {
+      "source_id": "src-08",
+      "name": "Ghostpost Channel",
+      "url": "http://demo08j57xmq7573.onion"
+    },
+    "url": "http://demo08j57xmq7573.onion/thread/thr-002",
+    "title": "Stealer log bundle posted",
+    "raw_text": "Indicator associated with stolen or harvested credentials. Rotate affected accounts and review recent logins. [crawled raw post body - variable length, unparsed HTML/text as fetched]",
+    "content_hash": null,
+    "language": "en",
+    "entities": [
+      {
+        "label": "credential-theft",
+        "value": "hr23@mail.example",
+        "type": "email"
+      }
+    ],
+    "threat_ids": [
+      "thr-002"
+    ],
+    "fetched_at": "2026-10-07T09:18:00Z",
+    "created_at": "2026-10-07T09:18:00Z"
+  },
+  {
+    "_id": "doc-003",
+    "doc_id": "doc-003",
+    "job_id": "job_dev_001",
+    "source": {
+      "source_id": "src-09",
+      "name": "DarkLedger Board",
+      "url": "http://demo09csu5g4q4l3.onion"
+    },
+    "url": "http://demo09csu5g4q4l3.onion/thread/thr-003",
+    "title": "Brand-impersonation domain cluster",
+    "raw_text": "Indicator used in a phishing campaign targeting customers or staff. Consider blocking and takedown. [crawled raw post body - variable length, unparsed HTML/text as fetched]",
+    "content_hash": null,
+    "language": "en",
+    "entities": [
+      {
+        "label": "phishing",
+        "value": "admin68@mail.example",
+        "type": "email"
+      }
+    ],
+    "threat_ids": [
+      "thr-003"
+    ],
+    "fetched_at": "2026-10-07T08:55:00Z",
+    "created_at": "2026-10-07T08:55:00Z"
+  }
+]

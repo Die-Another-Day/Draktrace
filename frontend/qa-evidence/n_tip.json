@@ -1,0 +1,16 @@
+[
+  {
+    "id": "P6-F1-375",
+    "area": "Tooltip",
+    "name": "Ateeb F1 RETEST at 375px: all 4 crawler tooltips inside the viewport, no sideways scroll",
+    "result": "PASS",
+    "detail": "8..209 | 9..238 | 9..237 | 8..235 (viewport 375)"
+  },
+  {
+    "id": "P6-F1-320",
+    "area": "Tooltip",
+    "name": "Ateeb F1 RETEST at 320px: all 4 crawler tooltips inside the viewport, no sideways scroll",
+    "result": "PASS",
+    "detail": "8..209 | 8..232 | 9..233 | 9..233 (viewport 320)"
+  }
+]

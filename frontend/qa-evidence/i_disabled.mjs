@@ -1,0 +1,10 @@
+import { launch, newPage, BASE } from './lib.mjs';
+const b = await launch(); const p = await newPage(b);
+await p.goto(BASE); await p.locator('.nav-item').nth(1).click({ timeout: 120000 }); await p.waitForSelector('text=PAGES CRAWLED');
+const read = () => p.evaluate(() => Object.fromEntries(['START', 'PAUSE', 'STOP', 'RESET'].map((n) => { const e = [...document.querySelectorAll('button')].find((x) => x.textContent.trim() === n); const c = getComputedStyle(e); return [n, { disabled: e.disabled, opacity: c.opacity, cursor: c.cursor, filter: c.filter, bg: c.backgroundColor }]; })));
+console.log('IDLE   ', JSON.stringify(await read()));
+await p.getByRole('button', { name: 'START', exact: true }).click(); await p.waitForTimeout(400);
+console.log('RUNNING', JSON.stringify(await read()));
+const t = await p.evaluate(() => [...document.querySelectorAll('main *')].filter((e) => /XX/.test(e.textContent) && e.children.length === 0).map((e) => e.textContent));
+console.log('internal-note text:', JSON.stringify(t));
+await b.close();

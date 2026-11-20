@@ -1,0 +1,70 @@
+[
+  {
+    "id": "cr-01",
+    "name": "Onion Forums",
+    "status": "idle",
+    "source": {
+      "id": "src-03",
+      "name": "TorBox Forums",
+      "url": "http://demo03wwyevfss5j.onion"
+    },
+    "pagesCrawled": 18420,
+    "pagesDiscovered": 22400,
+    "progress": 72,
+    "speed": 1,
+    "throughputPerMin": 42,
+    "latencyMs": 168,
+    "circuit": "A22D-31AA-88CD"
+  },
+  {
+    "id": "cr-02",
+    "name": "Paste Sites",
+    "status": "idle",
+    "source": {
+      "id": "src-06",
+      "name": "Onion Paste Archive",
+      "url": "http://demo06g36j6oh56q.onion"
+    },
+    "pagesCrawled": 14980,
+    "pagesDiscovered": 18000,
+    "progress": 45,
+    "speed": 2,
+    "throughputPerMin": 84,
+    "latencyMs": 199,
+    "circuit": "44EF-E012-E012"
+  },
+  {
+    "id": "cr-03",
+    "name": "Marketplaces",
+    "status": "idle",
+    "source": {
+      "id": "src-01",
+      "name": "Hydra Market Relay",
+      "url": "http://demo01hugo274paf.onion"
+    },
+    "pagesCrawled": 9650,
+    "pagesDiscovered": 14200,
+    "progress": 31,
+    "speed": 1,
+    "throughputPerMin": 0,
+    "latencyMs": 190,
+    "circuit": "E012-44EF-A22D"
+  },
+  {
+    "id": "cr-04",
+    "name": "Leak Channels",
+    "status": "idle",
+    "source": {
+      "id": "src-11",
+      "name": "Ransom Notice Wall",
+      "url": "http://demo11afa4fmphcr.onion"
+    },
+    "pagesCrawled": 5870,
+    "pagesDiscovered": 9000,
+    "progress": 0,
+    "speed": 1,
+    "throughputPerMin": 0,
+    "latencyMs": 160,
+    "circuit": "7F3A-E012-91BC"
+  }
+]

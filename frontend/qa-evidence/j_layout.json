@@ -1,0 +1,86 @@
+[
+  {
+    "id": "GL-B1",
+    "area": "Layout",
+    "name": "PDF Bug 1: Crawlers card rows lay out identically (Start/badge never wrap per-row) at 1440/1024/768",
+    "result": "PASS",
+    "detail": "1440: wrapped=[0,0,0,0] rowH=[32,32,32,32] | 1024: wrapped=[0,0,0,0] rowH=[32,32,32,32] | 768: wrapped=[0,0,0,0] rowH=[32,32,32,32]"
+  },
+  {
+    "id": "GL-B2",
+    "area": "Layout",
+    "name": "PDF Bug 2: no empty half-row beside the Crawlers card at 1024/768",
+    "result": "PASS",
+    "detail": "1024: crawlersRow uses 702/702px (1 card) | 768: crawlersRow uses 446/446px (1 card)"
+  },
+  {
+    "id": "GL-B3",
+    "area": "Layout",
+    "name": "PDF Bug 3: top bar, ticker and phone bottom bar are opaque enough that scrolled content does not show through",
+    "result": "INFO",
+    "detail": "desktop={\"topbar\":{\"a\":1,\"blur\":\"none\"},\"ticker\":{\"a\":1,\"blur\":\"none\"},\"nav\":{\"a\":0,\"blur\":\"none\"}} phoneNav={\"a\":0,\"blur\":\"none\"} (alpha<1 and no blur means content visibly bleeds through)"
+  },
+  {
+    "id": "GL-B3b",
+    "area": "Layout",
+    "name": "PDF Bug 3 verdict",
+    "result": "FAIL",
+    "detail": "topbar alpha=1 phone nav alpha=0"
+  },
+  {
+    "id": "GL-T18",
+    "area": "Layout",
+    "name": "PDF Test 18: top bar and ticker stay pinned while scrolling",
+    "result": "PASS",
+    "detail": "{\"top\":0,\"ticker\":64,\"sy\":800}"
+  },
+  {
+    "id": "GL-B4",
+    "area": "Layout",
+    "name": "PDF Bug 4: every form field has an id or name (DevTools Issues)",
+    "result": "PASS",
+    "detail": "tab1: 0 [] | tab2: 0 [] | tab3: 0 []"
+  },
+  {
+    "id": "GL-B5",
+    "area": "Layout",
+    "name": "PDF Bug 5: breadcrumb does not overlap the search box between 700 and 1024 px",
+    "result": "PASS",
+    "detail": "1024:{\"overlap\":false,\"a\":[284,500],\"s\":[557,817]} | 900:{\"overlap\":false,\"a\":[284,457],\"s\":[475,693]} | 800:{\"overlap\":false,\"a\":[284,357],\"s\":[375,593]} | 768:{\"overlap\":false,\"a\":[284,325],\"s\":[343,561]} | 761:{\"overlap\":false,\"a\":[284,318],\"s\":[336,554]} | 700:{\"overlap\":false,\"a\":[16,141],\"s\":[547,585]}"
+  },
+  {
+    "id": "GL-B6",
+    "area": "Layout",
+    "name": "PDF Bug 6: threat-level gauge labels do not overlap at 375 px",
+    "result": "PASS",
+    "detail": "{\"texts\":[\"70\",\"High\",\"Current level\"],\"overlaps\":[]}"
+  },
+  {
+    "id": "GL-B7",
+    "area": "Layout",
+    "name": "PDF Bug 7: Threats-over-time axis labels neither collide nor leave the card at 375 px",
+    "result": "PASS",
+    "detail": "{\"n\":8,\"overlaps\":0,\"outside\":0,\"card\":[16,349]}"
+  },
+  {
+    "id": "GL-B8",
+    "area": "Layout",
+    "name": "PDF Bug 8: phone widths (≤640 px) use ONE column in the Command Center grid",
+    "result": "PASS",
+    "detail": "375px→1 col, 414px→1 col, 600px→1 col, 640px→1 col"
+  },
+  {
+    "id": "GL-B8b",
+    "area": "Layout",
+    "name": "PDF Bug 8 symptom: severity legend stays inside its card at 375 px",
+    "result": "PASS",
+    "detail": "{\"legendRight\":332,\"cardRight\":348}"
+  },
+  {
+    "id": "GL-T30",
+    "area": "Layout",
+    "name": "PDF Test 30: top bar has the same height/layout on all 3 tabs at 4 widths",
+    "result": "PASS",
+    "detail": "1440: heights 64,64,64 | 1024: heights 64,64,64 | 768: heights 64,64,64 | 375: heights 64,64,64"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "id": "RS-01",
+    "area": "Responsive",
+    "name": "No horizontal scroll / content beyond viewport on any tab at 1920/1440/1024/768/414/390/360/320",
+    "result": "FAIL",
+    "detail": "1440px tab3: content past viewport: page,threat-page ; 1024px tab1: content past viewport: page,cc,cc-grid,dt-card dt-card--hover cc-span-3,dt-card__body ; 1024px tab3: content past viewport: page,threat-page ; 768px tab3: content past viewport: page,threat-page ; 414px tab1: content past viewport: page,cc,cc-grid,dt-card dt-card--hover cc-span-3 ; 414px tab3: content past viewport: page,threat-page ; 390px tab1: content past viewport: page,cc,cc-grid,dt-card dt-card--hover cc-span-3 ; 390px tab3: content past viewport: page,threat-page ; 360px tab3: content past viewport: page,threat-page ; 320px tab1: content past viewport: SPAN ; 320px tab3: content past viewport: page,threat-page"
+  },
+  {
+    "id": "RS-02",
+    "area": "Responsive",
+    "name": "Nav layout per width (side/rail on desktop+tablet, bottom bar on phone)",
+    "result": "INFO",
+    "detail": "1920:t1:nav=?:tiny=0 1440:t1:nav=?:tiny=0 1024:t1:nav=?:tiny=0 768:t1:nav=?:tiny=0 414:t1:nav=bottom:tiny=0 390:t1:nav=bottom:tiny=0 360:t1:nav=bottom:tiny=0 320:t1:nav=bottom:tiny=0"
+  },
+  {
+    "id": "RS-03",
+    "area": "Responsive",
+    "name": "Interactive controls below 24×24 px (WCAG 2.5.8 minimum) across sizes",
+    "result": "INFO",
+    "detail": "1920:t2:nav=?:tiny=1 1920:t3:nav=?:tiny=1 1440:t2:nav=?:tiny=1 1440:t3:nav=?:tiny=1 1024:t2:nav=?:tiny=1 1024:t3:nav=?:tiny=1 768:t2:nav=?:tiny=1 768:t3:nav=?:tiny=6 414:t2:nav=bottom:tiny=1 414:t3:nav=bottom:tiny=6 390:t2:nav=bottom:tiny=1 390:t3:nav=bottom:tiny=6 360:t2:nav=bottom:tiny=1 360:t3:nav=bottom:tiny=6 320:t2:nav=bottom:tiny=1 320:t3:nav=bottom:tiny=6"
+  },
+  {
+    "id": "CC-08",
+    "area": "Command Center",
+    "name": "Pages-crawled stat keeps advancing while crawlers run (feed paused)",
+    "result": "PASS",
+    "detail": "Pages crawled 48,920 ▲ 8.7% vs last 24 h -> Pages crawled 48,934 ▲ 8.7% vs last 24 h"
+  },
+  {
+    "id": "ST-02",
+    "area": "Stability",
+    "name": "60 rapid tab switches while crawling: no console errors/warnings",
+    "result": "PASS",
+    "detail": "problems=[] elapsed=3925ms"
+  },
+  {
+    "id": "ST-03",
+    "area": "Stability",
+    "name": "No runaway DOM/heap growth after 60 switches",
+    "result": "FAIL",
+    "detail": "DOM 234->1038; heap 10.0MB->10.0MB (swiftshader sandbox, indicative only)"
+  },
+  {
+    "id": "ST-04",
+    "area": "Stability",
+    "name": "Palette commands & boot skip",
+    "result": "ERROR",
+    "detail": "locator.waitFor: Timeout 30000ms exceeded."
+  }
+]

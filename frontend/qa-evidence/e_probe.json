@@ -1,0 +1,37 @@
+[
+  {
+    "id": "ST-04",
+    "area": "Stability",
+    "name": "Command palette: all commands work, no-match message, Esc closes; boot replay skippable",
+    "result": "FAIL",
+    "detail": "crawler:Dark Web Crawler | intel:Threat Intelligence | cmd:Command Center | crawl:LIVE crawler | stop:STOPPED crawler | rain:false | boot:0->0 | noMatch:1 closedByEsc:true"
+  },
+  {
+    "id": "RS-04",
+    "area": "Responsive",
+    "name": "Controls under 24×24 px on Threat Intelligence at 390px",
+    "result": "INFO",
+    "detail": "[\"INPUT. 288x14 \\\"\\\"\"]"
+  },
+  {
+    "id": "RS-05",
+    "area": "Responsive",
+    "name": "Threat card fits 390px width without internal overflow (long 64-char hash IOC)",
+    "result": "PASS",
+    "detail": "{\"w\":348,\"over\":0}"
+  },
+  {
+    "id": "RS-06",
+    "area": "Responsive",
+    "name": "Details modal fits within 390×844 viewport, no horizontal overflow",
+    "result": "PASS",
+    "detail": "{\"l\":16,\"r\":364,\"vw\":390,\"h\":628,\"vh\":844,\"over\":0}"
+  },
+  {
+    "id": "AX-03",
+    "area": "Accessibility",
+    "name": "Text contrast ≥ 4.5:1 (3:1 large) over the three modules (static background estimate, no effect layers)",
+    "result": "FAIL",
+    "detail": "24 below threshold; worst: [{\"tab\":1,\"t\":\"Start\",\"cr\":1.06,\"fs\":13},{\"tab\":2,\"t\":\"TOR ROUTE:\",\"cr\":3.86,\"fs\":12},{\"tab\":2,\"t\":\"PAGES CRAWLED\",\"cr\":3.86,\"fs\":11.2},{\"tab\":2,\"t\":\"Step increment: monotonic (+\",\"cr\":3.86,\"fs\":10.88},{\"tab\":2,\"t\":\"STOP\",\"cr\":3.9,\"fs\":12},{\"tab\":1,\"t\":\"Search or run a command…\",\"cr\":4.2,\"fs\":13},{\"tab\":1,\"t\":\"drag to rotate\",\"cr\":4.2,\"fs\":10},{\"tab\":2,\"t\":\"Search or run a command…\",\"cr\":4.2,\"fs\":13}]"
+  }
+]
