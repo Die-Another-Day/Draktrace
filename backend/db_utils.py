@@ -300,6 +300,34 @@ CREATE INDEX IF NOT EXISTS idx_crawl_job_state  ON crawl_job(state);
 CREATE SEQUENCE IF NOT EXISTS usr_id_seq;
 CREATE SEQUENCE IF NOT EXISTS src_id_seq;
 CREATE SEQUENCE IF NOT EXISTS job_id_seq;
+
+-- JWT revocation (shared, durable). backend/app/core/security.py keeps
+-- revoked JTIs only in an in-memory set, which is lost on every restart;
+-- the dev backend checks this table too, so a logout survives a restart.
+-- Matches database/sql/schema.sql; keep the two in sync.
+CREATE TABLE IF NOT EXISTS revoked_tokens (
+    jti         TEXT PRIMARY KEY,
+    usr_id      TEXT NOT NULL REFERENCES users(usr_id),
+    token_type  TEXT NOT NULL CHECK (token_type IN ('access','refresh')),
+    expires_at  TIMESTAMPTZ NOT NULL,
+    revoked_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS idx_revoked_tokens_expires ON revoked_tokens(expires_at);
+
+-- Cases (investigator). Matches database/sql/schema.sql; keep the two in
+-- sync. Alerts/threats for a case live in MongoDB with case_id = this id.
+CREATE TABLE IF NOT EXISTS cases (
+    case_id     UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    title       TEXT NOT NULL,
+    description TEXT NOT NULL DEFAULT '',
+    status      TEXT NOT NULL DEFAULT 'open'
+                CHECK (status IN ('open','investigating','closed','archived')),
+    created_by  TEXT NOT NULL REFERENCES users(usr_id),
+    created_at  TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS idx_cases_status ON cases(status);
+CREATE INDEX IF NOT EXISTS idx_cases_created_by ON cases(created_by);
 """
 
 # prefix -> (table, id column); whitelist, also guards the f-strings below
@@ -961,6 +989,88 @@ async def dashboard_counts(*, conn: Optional[asyncpg.Connection] = None) -> Row:
 
 
 # ---------------------------------------------------------------------------
+# JWT REVOCATION (durable — see the revoked_tokens table in SCHEMA_SQL)
+# ---------------------------------------------------------------------------
+
+
+@_db_errors
+async def revoke_token(
+    jti: str,
+    usr_id: str,
+    token_type: str,
+    expires_at,
+    *,
+    conn: Optional[asyncpg.Connection] = None,
+) -> bool:
+    """Record a JWT as revoked. Returns True if this call inserted the row
+    (False = it was already revoked). `expires_at` is the token's original
+    expiry, so expired rows can be purged later."""
+    if token_type not in ("access", "refresh"):
+        raise InvalidValueError("token_type must be 'access' or 'refresh'")
+    async with connection(conn) as c:
+        result = await c.execute(
+            "INSERT INTO revoked_tokens (jti, usr_id, token_type, expires_at) "
+            "VALUES ($1, $2, $3, $4) ON CONFLICT (jti) DO NOTHING",
+            jti, usr_id, token_type, expires_at,
+        )
+    return result == "INSERT 0 1"
+
+
+@_db_errors
+async def is_token_revoked(jti: str, *, conn: Optional[asyncpg.Connection] = None) -> bool:
+    """True if the JTI is revoked and its original expiry has not passed yet.
+    (An expired token is rejected by the JWT expiry check anyway.)"""
+    async with connection(conn) as c:
+        row = await c.fetchrow(
+            "SELECT 1 FROM revoked_tokens WHERE jti = $1 AND expires_at > now()", jti
+        )
+    return row is not None
+
+
+@_db_errors
+async def purge_expired_tokens(*, conn: Optional[asyncpg.Connection] = None) -> int:
+    """Delete revocation rows whose tokens have expired. Returns rows deleted."""
+    async with connection(conn) as c:
+        result = await c.execute("DELETE FROM revoked_tokens WHERE expires_at < now()")
+    return int(result.split()[-1])
+
+
+# ---------------------------------------------------------------------------
+# CASES (minimal — full investigation tables live in database/sql/schema.sql)
+# ---------------------------------------------------------------------------
+
+_CASE_COLS = "case_id, title, description, status, created_by, created_at, updated_at"
+
+
+@_db_errors
+async def create_case(
+    title: str,
+    description: str,
+    created_by: str,
+    *,
+    conn: Optional[asyncpg.Connection] = None,
+) -> Row:
+    if not title.strip():
+        raise InvalidValueError("title is required")
+    async with connection(conn) as c:
+        record = await c.fetchrow(
+            f"INSERT INTO cases (title, description, created_by) VALUES ($1, $2, $3) "
+            f"RETURNING {_CASE_COLS}",
+            title.strip(), description or "", created_by,
+        )
+    return dict(record)
+
+
+@_db_errors
+async def count_cases(*, conn: Optional[asyncpg.Connection] = None) -> Row:
+    """{"total": n, "open": n} — used by GET /api/v1/dashboard/summary."""
+    async with connection(conn) as c:
+        total = await c.fetchval("SELECT count(*) FROM cases")
+        open_cases = await c.fetchval("SELECT count(*) FROM cases WHERE status = 'open'")
+    return {"total": total, "open": open_cases}
+
+
+# ---------------------------------------------------------------------------
 # CLI:  python db_utils.py init | health
 # ---------------------------------------------------------------------------
 
@@ -973,7 +1083,7 @@ if __name__ == "__main__":
             await init_pool()
             if command == "init":
                 await init_schema()
-                print("Schema ready (users, source, crawl_job + id sequences).")
+                print("Schema ready (users, source, crawl_job, revoked_tokens, cases + id sequences).")
             elif command == "health":
                 print(await health_check())
             else:

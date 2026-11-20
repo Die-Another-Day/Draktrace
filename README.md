@@ -1,27 +1,35 @@
 # DarkTrace development setup
 
-This repository includes a minimal development API so the frontend can run without a database or crawler. It uses Redis for alerts; accounts, sessions, sources, and queued jobs remain in memory and are cleared when the API restarts.
+This repository includes a minimal development API so the frontend can run without a crawler. It is backed by real databases: PostgreSQL stores users, sources, crawl jobs, cases and revoked JWTs; MongoDB stores alerts and threats. Everything survives API restarts. See `database/README.md` for the full data design.
 
 ## Requirements
 
 - Node.js 18+
 - Python 3.11+
+- Docker (for PostgreSQL + MongoDB), or both databases running locally
 
 ## Run locally
 
 Open two PowerShell terminals from the repository root.
 
-### 1. Start Redis and the development API
+### 1. Start the databases and the development API
 
 ```powershell
-docker run --name darktrace-redis -p 6379:6379 -d redis:7-alpine
+docker compose -f database/docker-compose.yml up -d
 cd backend
 Copy-Item .env.example .env
 python -m pip install -r requirements-dev.txt
 uvicorn dev_server:app --reload --port 8000
 ```
 
-The development API reads `REDIS_URL` from `backend\.env`. If Redis is already running elsewhere, update that value before starting the API.
+The development API reads `DATABASE_URL`, `MONGO_URL` and `JWT_SECRET_KEY` from `backend\.env` (fill in `JWT_SECRET_KEY` with 32+ random characters). It refuses to start if either database is unreachable.
+
+Optional: load the MongoDB seed data (40 threats, 40 indicators, 6 alerts, …) and the Postgres seed data before starting:
+
+```powershell
+python -m database.nosql.seed
+psql "$env:DATABASE_URL" -f database/sql/seed.sql
+```
 
 Check that it is running:
 
@@ -41,10 +49,10 @@ Open [http://localhost:5173](http://localhost:5173), create an account, and sign
 
 ## What works in development
 
-- Register, sign in, sign out, and session validation
+- Register, sign in, sign out, and session validation (JWT; logout revokes the token in Postgres, so it stays revoked after a restart)
 - Dashboard reads for alerts, summary, sources, and crawl jobs
-- Threat Intelligence reads alerts stored in Redis
-- Crawler page queues jobs against one safe, local development source
+- Threat Intelligence reads threats from MongoDB (`GET /api/v1/threats`, triage with `PATCH /api/v1/threats/{threat_id}`)
+- Crawler page queues jobs against one safe, local development source (created automatically for the first registered user)
 
 Queued jobs remain in `queued` state. No URLs are fetched and no crawler is started.
 
@@ -64,4 +72,12 @@ cd frontend
 npm run build
 ```
 
-The development API has no database files or migrations. Only alerts survive API restarts; all other development records exist only while `dev_server.py` is running.
+Run the integration tests against throwaway databases (see `backend/tests/test_dev_server.py` for the exact commands):
+
+```powershell
+$env:TEST_DATABASE_URL="postgresql://postgres:postgres@localhost:5432/darktrace_test"
+$env:TEST_MONGO_URL="mongodb://localhost:27017"
+$env:TEST_MONGO_DB="darktrace_test"
+cd backend
+python -m pytest tests/test_dev_server.py test_db_utils.py tests/test_auth_api.py -v
+```

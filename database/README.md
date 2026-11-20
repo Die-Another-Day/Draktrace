@@ -1,13 +1,19 @@
 # DarkTrace — database
 
-> **STATUS — NOT CONNECTED YET: the connection between the database and
-> the backend is NOT done yet.** The schemas, seed data and client helpers
-> in this folder are ready, but no backend code reads from or writes to
-> MongoDB or Postgres through them yet — `backend/dev_server.py` still
-> uses in-memory dicts + Redis, and `backend/main.py` still expects its
-> (missing) SQLAlchemy models. Wiring the backend to these stores is a
-> separate, still-open step (entry point: `database/nosql/mongo_client.py`
-> next to `backend/db_utils.py` in the FastAPI lifespan).
+> **STATUS — CONNECTED (dev backend, 2026-11-20): the dev backend
+> `backend/dev_server.py` is wired to both databases.** PostgreSQL holds
+> users, sources, crawl jobs, cases and revoked JWTs (via
+> `backend/db_utils.py`); MongoDB holds alerts and threats (via
+> `backend/app/services/mongo_store.py` on top of
+> `database/nosql/mongo_client.py`). Verified end-to-end against real
+> PostgreSQL 16 + MongoDB 7.0: register/login, alerts, threats, crawl
+> jobs, dashboard summary, refresh-token rotation and logout revocation
+> — see `backend/tests/test_dev_server.py`.
+>
+> Still NOT connected: the production `backend/main.py` — it still
+> expects its (missing) SQLAlchemy models and ES / Neo4j / MinIO / SIEM /
+> blockchain services, so it cannot run. Cases, investigations and
+> evidence have tables but no API endpoints yet (see §7).
 
 Repo: https://github.com/Parth101025r/darktrace (cloned 2026-11-20, HEAD `7e33f99`).
 
@@ -141,11 +147,15 @@ psql "$DATABASE_URL" -f database/sql/schema.sql
 psql "$DATABASE_URL" -f database/sql/seed.sql
 ```
 
-Backend wiring (not done here — the backend code was not changed):
+Backend wiring (done 2026-11-20, `backend/dev_server.py`):
 `database/nosql/mongo_client.py` (`init_mongo()` / `mongo()` / `health_check()`)
-mirrors `backend/db_utils.py` (`init_pool()` …) and is ready to be called
-from the FastAPI lifespan next to it. `database/nosql/models.py` validates
-payloads before insert.
+mirrors `backend/db_utils.py` (`init_pool()` …) and both are called from
+the FastAPI lifespan. `backend/app/services/mongo_store.py` is the only
+place the backend talks to MongoDB (alerts + threats, validated against
+`database/nosql/models.py` before insert). `backend/db_utils.py` was
+extended with the `revoked_tokens` and `cases` tables (matching
+`sql/schema.sql`) plus `revoke_token` / `is_token_revoked` /
+`count_cases` / `create_case`. Redis is no longer used by the dev backend.
 
 ## 6. Verify
 
@@ -171,9 +181,10 @@ python -m database.nosql.seed --validate-only   # 124 docs vs models.py, no DB
    be written (or `main.py` trimmed to the dev server).
 3. **Source-type enum is narrower than the frontend mock data**
    (`leak-site`, `chat-channel` have no SQL value) — see §3 mapping.
-4. **Dev alerts are still Redis-only until the backend is wired to
-   MongoDB.** `mongo_client.py` is the wiring point; `dev_server.py`
-   was deliberately not edited in this task.
+4. **Dev alerts are now MongoDB-only.** Redis was removed from the dev
+   backend entirely (`dev_server.py`, `.env.example`,
+   `requirements-dev.txt`); the `redis` service still exists in
+   `docker-compose.yml` but nothing uses it.
 5. **No retention policy was set for `threats` / `alerts` / `indicators`.**
    Only the append-only feeds expire (TTL 180 days). Decide an
    archival rule before production volume arrives.

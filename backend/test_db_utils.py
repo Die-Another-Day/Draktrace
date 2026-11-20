@@ -426,3 +426,37 @@ async def test_transaction_rolls_back_on_error(pool):
             await db.create_user("rolled", "r@example.com", "h", conn=conn)
             await db.create_source("S", "paste", "auth", "usr_999", conn=conn)  # bad FK
     assert await db.get_user_by_username("rolled") is None
+
+
+# ---- JWT revocation + cases (added by the DB-backend integration) --------
+
+
+async def test_revoke_token_roundtrip(pool, user):
+    from datetime import datetime, timedelta, timezone
+
+    jti = "jti_roundtrip_001"
+    exp = datetime.now(timezone.utc) + timedelta(hours=1)
+    assert await db.is_token_revoked(jti) is False
+    assert await db.revoke_token(jti, user["usr_id"], "refresh", exp) is True
+    assert await db.revoke_token(jti, user["usr_id"], "refresh", exp) is False
+    assert await db.is_token_revoked(jti) is True
+    assert await db.purge_expired_tokens() == 0  # nothing expired yet
+
+
+async def test_revoke_token_rejects_bad_type(pool, user):
+    from datetime import datetime, timedelta, timezone
+
+    with pytest.raises(db.InvalidValueError):
+        await db.revoke_token(
+            "jti_bad_type", user["usr_id"], "session",
+            datetime.now(timezone.utc) + timedelta(hours=1),
+        )
+
+
+async def test_count_cases_grows_with_create_case(pool, user):
+    before = await db.count_cases()
+    case = await db.create_case("Test case", "For the dashboard summary", user["usr_id"])
+    assert case["status"] == "open"
+    after = await db.count_cases()
+    assert after["total"] == before["total"] + 1
+    assert after["open"] == before["open"] + 1
