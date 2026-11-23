@@ -7,9 +7,11 @@
 #   docker compose -f database/docker-compose.yml down -v     # wipes data (init scripts re-run)
 #
 # Init scripts run ONLY on first start with an empty volume:
-#   Postgres: sql/schema.sql then sql/seed.sql
+#   Postgres: no init scripts — the backend creates its tables itself
+#   (backend/db_utils.py init_schema() on startup). The standalone
+#   database/sql/ files were removed 2026-11-23.
 #   MongoDB:  nosql/init-mongo.js (validators + indexes; seed with seed.py after)
-#   Redis:    no init — dev_server.py already uses it for alerts (darktrace:alerts).
+#   Redis:    no init — nothing in the backend uses Redis anymore.
 # If you change an init script, wipe the volume (down -v) or apply it manually.
 # Never use these passwords in production; override them in database/.env.
 
@@ -25,8 +27,6 @@ services:
       - "${POSTGRES_PORT:-5432}:5432"
     volumes:
       - darktrace-pgdata:/var/lib/postgresql/data
-      - ./sql/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
-      - ./sql/seed.sql:/docker-entrypoint-initdb.d/02_seed.sql:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-darktrace}"]
       interval: 5s

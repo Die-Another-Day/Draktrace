@@ -24,11 +24,10 @@ uvicorn dev_server:app --reload --port 8000
 
 The development API reads `DATABASE_URL`, `MONGO_URL` and `JWT_SECRET_KEY` from `backend\.env` (fill in `JWT_SECRET_KEY` with 32+ random characters). It refuses to start if either database is unreachable.
 
-Optional: load the MongoDB seed data (40 threats, 40 indicators, 6 alerts, …) and the Postgres seed data before starting:
+Optional: load the MongoDB seed data (40 threats, 40 indicators, 6 alerts, …) before starting:
 
 ```powershell
 python -m database.nosql.seed
-psql "$env:DATABASE_URL" -f database/sql/seed.sql
 ```
 
 Check that it is running:

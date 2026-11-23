@@ -14,6 +14,14 @@
 > expects its (missing) SQLAlchemy models and ES / Neo4j / MinIO / SIEM /
 > blockchain services, so it cannot run. Cases, investigations and
 > evidence have tables but no API endpoints yet (see §7).
+>
+> **SQL design files removed 2026-11-23:** the standalone
+> `database/sql/` folder (`schema.sql`, `seed.sql`) was removed at the
+> senior's request — this folder is now MongoDB-only. Note the backend
+> still uses PostgreSQL itself: `backend/db_utils.py` keeps the tables
+> (`users`, `source`, `crawl_job`, `revoked_tokens`, `cases`) and creates
+> them on startup, so logins, sources and crawl jobs still work. Only
+> the standalone `.sql` files are gone, not the Postgres usage.
 
 Repo: https://github.com/Parth101025r/darktrace (cloned 2026-11-20, HEAD `7e33f99`).
 
@@ -22,7 +30,7 @@ existed before this folder:
 
 | Before | Where | Problem |
 |---|---|---|
-| `users`, `source`, `crawl_job` | Postgres, `backend/db_utils.py` `SCHEMA_SQL` + `backend/main.py` | The only persistent tables. Correct — kept verbatim in `sql/schema.sql`. |
+| `users`, `source`, `crawl_job` | Postgres, `backend/db_utils.py` `SCHEMA_SQL` + `backend/main.py` | The only persistent tables. Correct — they live in `db_utils.py` (the standalone `sql/schema.sql` copy was removed 2026-11-23). |
 | Alerts | Redis list `darktrace:alerts`, `backend/dev_server.py` | Volatile list, no query, no status, no case link. |
 | Accounts, sessions, sources, jobs (dev) | In-memory dicts, `backend/dev_server.py` | Cleared on every restart (says so in the root README). |
 | Threats, sources, crawlers, activity, charts | JSON fixtures, `frontend/src/mock-data/*.json` | Frontend demo data, not a store. |
@@ -72,30 +80,24 @@ Seed data (`nosql/seed_data/`, generated from the repo's own mock data,
 not invented): 40 threats, 40 indicators, 6 alerts, 3 crawled documents,
 29 activity events, 2 SIEM events, 4 crawl logs = **124 documents**.
 
-## 3. SQL — PostgreSQL (`sql/`)
+## 3. SQL — PostgreSQL (files removed)
 
-`sql/schema.sql` — run it with `psql "$DATABASE_URL" -f sql/schema.sql`.
-
-| Table | Change | Why SQL |
-|---|---|---|
-| `users` | Kept verbatim from `db_utils.py` | Login, `password_hash` (scrypt), roles, status. Unique username/email. |
-| `source` | Kept verbatim | Registry with FK `created_by → users`; `crawl_policy`/`health` stay JSONB (open-ended per source). |
-| `crawl_job` | Kept verbatim | State machine + FK `source_id → source`; final `stats` JSONB. |
-| `cases` | **New** — `case_id UUID`, `title`, `description`, `status open/investigating/closed/archived`, `created_by → users` | Prod endpoint existed, table didn't (`main.py` list/get/report + dashboard `total_cases`/`open_cases`). |
-| `investigations` | **New** — `investigation_id UUID`, `case_id → cases`, `query`, `findings_summary` | Cross-source search (ES + Neo4j) needs a stored query per case. |
-| `evidence_records` | **New** — `evidence_id UUID`, `investigation_id → investigations`, `object_key` (MinIO/S3), `sha256_hash`, `blockchain_status` | Chain of custody: file bytes in object storage, pointer + hash here under FK/ACID. |
-| `revoked_tokens` | **New** — `jti PK`, `usr_id → users`, `token_type`, `expires_at` | Replaces the in-memory revoked-JTI set; shared across restarts/instances. Delete rows past `expires_at`. |
-| `audit_log` | **New** — append-only, `actor_id → users`, `action`, `entity_type/id`, `details JSONB` | Who changed what; must be joinable to users and never updated. |
-
-`sql/seed.sql` seeds 1 admin user (password `CHANGE_ME_VIA_API` — it
-**cannot log in**; register through the API), the 12 mock sources, 4
-queued crawl jobs, and 1 example case + investigation. Idempotent.
+The standalone SQL files (`sql/schema.sql`, `sql/seed.sql`) were
+removed 2026-11-23 at the senior's request — this folder is now
+MongoDB-only. The tables themselves still exist in the backend:
+`backend/db_utils.py` `SCHEMA_SQL` defines `users`, `source`,
+`crawl_job` (kept verbatim from the original repo), plus `cases` and
+`revoked_tokens` (added during the integration), and creates them on
+startup. The removed files also defined `investigations`,
+`evidence_records` and `audit_log` — those three tables no longer exist
+anywhere; they belonged to the production `main.py` endpoints, which
+cannot run anyway (see §7).
 
 One mapping to know: the mock sources use types the SQL enum does not
-have (`leak-site`, `chat-channel`). The seed maps them to the closest
-SQL type (`paste` / `forum`) and keeps the original in
-`crawl_policy.mock_type`. Extending the enum means changing `schema.sql`
-**and** `backend/db_utils.py` `SOURCE_TYPES` together.
+have (`leak-site`, `chat-channel`). The old seed mapped them to the
+closest SQL type (`paste` / `forum`) and kept the original in
+`crawl_policy.mock_type`. Extending the enum means changing
+`backend/db_utils.py` `SOURCE_TYPES`.
 
 ## 4. How the two stores link (and what stays elsewhere)
 
@@ -141,10 +143,6 @@ mongosh "mongodb://localhost:27017/darktrace" --file database/nosql/init-mongo.j
 # MongoDB seed data (idempotent upserts; --validate-only needs no database)
 pip install pymongo pydantic
 python -m database.nosql.seed
-
-# Postgres schema + seed (schema is also applied by docker compose on first start)
-psql "$DATABASE_URL" -f database/sql/schema.sql
-psql "$DATABASE_URL" -f database/sql/seed.sql
 ```
 
 Backend wiring (done 2026-11-20, `backend/dev_server.py`):
@@ -153,9 +151,9 @@ mirrors `backend/db_utils.py` (`init_pool()` …) and both are called from
 the FastAPI lifespan. `backend/app/services/mongo_store.py` is the only
 place the backend talks to MongoDB (alerts + threats, validated against
 `database/nosql/models.py` before insert). `backend/db_utils.py` was
-extended with the `revoked_tokens` and `cases` tables (matching
-`sql/schema.sql`) plus `revoke_token` / `is_token_revoked` /
-`count_cases` / `create_case`. Redis is no longer used by the dev backend.
+extended with the `revoked_tokens` and `cases` tables plus
+`revoke_token` / `is_token_revoked` / `count_cases` / `create_case`.
+Redis is no longer used by the dev backend.
 
 ## 6. Verify
 
@@ -163,8 +161,6 @@ extended with the `revoked_tokens` and `cases` tables (matching
 python -m database.nosql.seed --validate-only   # 124 docs vs models.py, no DB
 # MongoDB: db.threats.countDocuments() -> 40 ; db.indicators.countDocuments() -> 40
 #          db.alerts.countDocuments() -> 6  ; db.activity_events.countDocuments() -> 29
-# Postgres: SELECT count(*) FROM source; -> 12 ; SELECT count(*) FROM crawl_job; -> 4
-#           SELECT count(*) FROM cases; -> 1  ; SELECT count(*) FROM users; -> 1
 ```
 
 ## 7. Open decisions / gaps found while doing this
@@ -176,9 +172,10 @@ python -m database.nosql.seed --validate-only   # 124 docs vs models.py, no DB
    is the recommendation, not a silent change.
 2. **`app/models/investigation.py`, `app/schemas/*`, `app/core/database.py`
    etc. are missing from the repo**, so `backend/main.py` cannot run.
-   The `cases` / `investigations` / `evidence_records` tables here are
-   derived from its endpoints and schemas; the model files still need to
-   be written (or `main.py` trimmed to the dev server).
+   The `cases` table (still in `backend/db_utils.py`) was derived from
+   its endpoints; `investigations` / `evidence_records` were removed
+   with `sql/` on 2026-11-23. The model files still need to be written
+   (or `main.py` trimmed to the dev server).
 3. **Source-type enum is narrower than the frontend mock data**
    (`leak-site`, `chat-channel` have no SQL value) — see §3 mapping.
 4. **Dev alerts are now MongoDB-only.** Redis was removed from the dev
@@ -204,7 +201,6 @@ database/
 │   ├── seed.py                # idempotent upsert seeder (+ --validate-only)
 │   └── seed_data/             # threats, indicators, alerts, crawled_documents,
 │                              # activity_events, siem_events, crawl_logs (124 docs)
-└── sql/
-    ├── schema.sql             # Postgres: 3 kept tables + 5 new tables
-    └── seed.sql               # 1 user, 12 sources, 4 jobs, 1 case + investigation
+# (sql/ removed 2026-11-23 — see §3; the SQL schema lives in
+#  backend/db_utils.py SCHEMA_SQL)
 ```
